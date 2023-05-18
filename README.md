@@ -62,7 +62,7 @@ Benchmark:
 
 ```
 @article{zhang2023benchmark,
-  author={Qingwen Zhang*,Daniel Duberg*, Ruoyu Geng, Mingkai Jia and Patric Jensfelt},
+  author={Qingwen Zhang, Daniel Duberg, Ruoyu Geng, Mingkai Jia and Patric Jensfelt},
   title={Benchmarks on Removing Dynamic Points Techniques in Map},
   booktitle={ArXiv Preprint todo.todo},
   year={2023}
