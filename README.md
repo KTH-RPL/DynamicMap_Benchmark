@@ -1,7 +1,7 @@
 Benchmark of Removed Dynamic in the Point Cloud Map
 ---
 
-[![arXiv](https://img.shields.io/badge/arXiv-TODO.TODO-b31b1b.svg)](https://arxiv.org/abs/TODO.TODO) Under review.
+[![arXiv](https://img.shields.io/badge/arXiv-TODO.TODO-b31b1b.svg)](https://arxiv.org/abs/TODO.TODO) Will show up in ITSC 2023, Spain.
 
 Note: All dataset, and codes will be released after paper review around July, here is preview on readme in codes.
 
@@ -17,7 +17,13 @@ Task detect dynamic points in maps and remove them, enhancing the maps:
 - `scripts/py/eval`: eval the result pcd compared with ground truth, get quantitative table
 - `scripts/py/data` : pre-process data before benchmark. We also directly provided all the dataset we tested in the map. We run this benchmark offline in computer, so we will extract only pcd files from custom rosbag/other data format [kitti, Argoverse2]
 
+**Quick** try:
+
+- Teaser data on KITTI sequence 00 only 530Mb, download through [personal One Drive](https://hkustconnect-my.sharepoint.com/:f:/g/personal/qzhangcb_connect_ust_hk/Eki3-eqmhWJDjucGA23TNU4ByF9YuuShic7QZc9aPjmp4w?e=Wd4W0J)
+- Go to methods folder, build and run through `./build/${methods_name}_run ${data_path, e.g. /data/00} ${config.yaml} -1 `
+
 ## Methods:
+
 Please check in [`methods`](methods) folder.
 
 - [x] ERASOR: [RAL 2021 official link](https://github.com/LimHyungTae/ERASOR), [**benchmark implementation**](https://github.com/Kin-Zhang/ERASOR/tree/feat/no_ros)

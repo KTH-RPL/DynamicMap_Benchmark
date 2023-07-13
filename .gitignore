@@ -63,13 +63,13 @@ coverage_report/*
 *.egg-info
 *.pyc
 
-benchmarks/build/*
+build/
 
 *.swp
 *.csv
 *.cam
 
-*.txt
+# *.txt
 *.pdf
 
 test.py
