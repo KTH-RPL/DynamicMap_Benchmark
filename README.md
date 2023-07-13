@@ -15,7 +15,7 @@ Task detect dynamic points in maps and remove them, enhancing the maps:
 
 - `methods` : contains all the methods in the benchmark
 - `scripts/py/eval`: eval the result pcd compared with ground truth, get quantitative table
-- `scripts/py/data` : pre-process data before benchmark. We also directly provided all the dataset we tested in the map. We run this benchmark offline in computer, so we will extract only pcd files from custom rosbag/other data format [kitti, Argoverse2]
+- `scripts/py/data` : pre-process data before benchmark. We also directly provided all the dataset we tested in the map. We run this benchmark offline in computer, so we will extract only pcd files from custom rosbag/other data format [KITTI, Argoverse2]
 
 **Quick** try:
 
@@ -44,23 +44,23 @@ Download all these dataset from [Zenodo online drive](done but not public yet).
 
 - [x] [Semantic-Kitti, outdoor small town](https://semantic-kitti.org/dataset.html) VLP-64
 - [x] [Argoverse2.0, outdoor US cities](https://www.argoverse.org/av2.html#lidar-link) VLP-32
-- [x] [KTH-Campuse] Our own dataset, Collected by Leica RTC360 Total Station.
+- [ ] [KTH-Campuse] Our own dataset, Collected by Leica RTC360 Total Station.
 - [ ] [KTH-Indoor] Our own dataset, Collected by VLP-16/Mid-70 in kobuki.
 - [x] [UDI-Plane] Our own dataset, Collected by VLP-16 in a small vehicle.
 
 ### Evaluation
 
-First all the methods will output the clean map, so we need to extract the ground truth label from gt label based on clean map. Why we need this? Since maybe some methods will downsample in their pipeline, so we need to extract the gt label from the downsampled map.
+First all the methods will output the clean map, so we need to extract the ground truth label from gt label based on clean map. Why we need this? Since maybe some methods downsample in their pipeline, we need to extract the gt label from the downsampled map.
 
 Check [create dataset readme part](scripts/README.md#evaluation) in the scripts folder to get more information. But you can directly download the dataset through the link we provided. Then no need to read the creation; just use the data you downloaded.
 
-- Visualize the result pcd files in [CloudCompare](https://www.danielgm.net/cc/) or the script to provide, one click to get all evaluation benchmarks and comparison images like paper have.
+- Visualize the result pcd files in [CloudCompare](https://www.danielgm.net/cc/) or the script to provide, one click to get all evaluation benchmarks and comparison images like paper have check in [scripts/py/eval](scripts/py/eval).
 
 - All color bar also provided in CloudCompare, here is [tutorial how we make the animation video](TODO).
 
 ## Acknowledgements
 
-This benchmark implementation is based on codes from several repositories as we mentioned in the beginning. Thanks for these authors who kindly open-sourcing their work to the community. Please see our paper reference part to get more information on our reference.
+This benchmark implementation is based on codes from several repositories as we mentioned in the beginning. Thanks for these authors who kindly open-sourcing their work to the community. Please see our paper reference section to get more information.
 
 ### Cite Our Paper
 
