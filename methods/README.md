@@ -15,7 +15,7 @@ Test computer and System:
 
 Dependencies listed following if you want to install them manually, or you can use docker to build and run if you don't like trash your env.
 ### Docker
-If you want to use docker, please check [Dockerfile](../Dockerfile) and [docker-compose.yml](../docker-compose.yml) for more details. 
+If you want to use docker, please check [Dockerfile](../Dockerfile) for more details.  This can also be a reference for you to install the dependencies.
 ```
 cd DynamicMap_Benchmark
 docker build -t zhangkin/dynamic_map .
@@ -23,7 +23,8 @@ docker run -it --rm --name dynamicmap -v /home/kin/data:/home/kin/data zhangkin/
 ```
 - `-v` means link your data folder to docker container, so you can use your data in docker container. `-v ${your_env_path}:${container_path}`
 - If it's hard to build, you can always use `docker pull zhangkin/dynamic_map` to pull the image from docker hub.
-- 
+
+
 ### PCL / OpenCV
 Normally, you will directly have PCL and OpenCV library if you installed ROS-full in your computer. 
 OpenCV is required by Removert only, PCL is required by Benchmark.
