@@ -11,13 +11,31 @@ All of them have same dependencies [PCL, Glog, yaml-cpp], we will show how to in
 Test computer and System:
 
 - Desktop setting: i9-12900KF, 64GB RAM, Swap 90GB, 1TB SSD
-- System setting: Ubuntu 20.04
-- Test Date: 2023/04/06
-- Modified Version commit: https://github.com/Kin-Zhang/octomap/tree/92a9f14cafa5f567c47b58cbe91137c9a6ba1b0c
+- System setting: Ubuntu 20.04 [ROS noetic-full installed in system]
 
-Dependencies:
-### PCL
-Normally, you will directly have PCL library if you installed ROS-full in your computer. 
+Dependencies listed following if you want to install them manually, or you can use docker to build and run if you don't like trash your env.
+### Docker
+If you want to use docker, please check [Dockerfile](../Dockerfile) and [docker-compose.yml](../docker-compose.yml) for more details. 
+```
+cd DynamicMap_Benchmark
+docker build -t zhangkin/dynamic_map .
+docker run -it --rm --name dynamicmap -v /home/kin/data:/home/kin/data zhangkin/dynamic_map /bin/zsh
+```
+- `-v` means link your data folder to docker container, so you can use your data in docker container. `-v ${your_env_path}:${container_path}`
+- If it's hard to build, you can always use `docker pull zhangkin/dynamic_map` to pull the image from docker hub.
+- 
+### PCL / OpenCV
+Normally, you will directly have PCL and OpenCV library if you installed ROS-full in your computer. 
+OpenCV is required by Removert only, PCL is required by Benchmark.
+
+Reminder for ubuntu 20.04 may occur this error:
+```bash
+fatal error: opencv2/cv.h: No such file or directory
+```
+ln from opencv4 to opencv2
+```bash
+sudo ln -s /usr/include/opencv4/opencv2 /usr/include/opencv2
+```
 
 ### glog gflag [for print]
 or you can install through `sudo apt install`

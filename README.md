@@ -1,9 +1,9 @@
 Benchmark of Removed Dynamic in the Point Cloud Map
 ---
 
-[![arXiv](https://img.shields.io/badge/arXiv-TODO.TODO-b31b1b.svg)](https://arxiv.org/abs/TODO.TODO) Will show up in ITSC 2023, Spain.
+[![arXiv](https://img.shields.io/badge/arXiv-2307.07260-b31b1b.svg)](https://arxiv.org/abs/2307.07260) Will show up in ITSC 2023, Spain.
 
-Note: All dataset, and codes will be released after paper review around July, here is preview on readme in codes.
+Here is preview on readme in codes. I'm trying my best on updating all codes and datasets.
 
 Task detect dynamic points in maps and remove them, enhancing the maps:
 
@@ -44,7 +44,7 @@ Download all these dataset from [Zenodo online drive](done but not public yet).
 
 - [x] [Semantic-Kitti, outdoor small town](https://semantic-kitti.org/dataset.html) VLP-64
 - [x] [Argoverse2.0, outdoor US cities](https://www.argoverse.org/av2.html#lidar-link) VLP-32
-- [ ] [KTH-Campuse] Our own dataset, Collected by Leica RTC360 Total Station.
+- [ ] [KTH-Campuse] Our [Multi-Campus Dataset](https://mcdviral.github.io/), Collected by Leica RTC360 Total Station.
 - [ ] [KTH-Indoor] Our own dataset, Collected by VLP-16/Mid-70 in kobuki.
 - [x] [UDI-Plane] Our own dataset, Collected by VLP-16 in a small vehicle.
 
@@ -72,7 +72,7 @@ Benchmark:
 @article{zhang2023benchmark,
   author={Qingwen Zhang, Daniel Duberg, Ruoyu Geng, Mingkai Jia, Lujia Wang and Patric Jensfelt},
   title={A Dynamic Points Removal Benchmark in Point Cloud Maps},
-  booktitle={ArXiv Preprint todo.todo},
+  journal={arXiv preprint arXiv:2307.07260},
   year={2023}
 }
 ```
