@@ -1,0 +1,9 @@
+[submodule "methods/octomap"]
+	path = methods/octomap
+	url = https://github.com/Kin-Zhang/octomap.git
+[submodule "methods/ERASOR"]
+	path = methods/ERASOR
+	url = https://github.com/Kin-Zhang/ERASOR.git
+[submodule "methods/removert"]
+	path = methods/removert
+	url = https://github.com/Kin-Zhang/removert.git

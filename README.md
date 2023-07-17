@@ -1,4 +1,4 @@
-Benchmark of Removed Dynamic in the Point Cloud Map
+A Dynamic Points Removal Benchmark in Point Cloud Maps
 ---
 
 [![arXiv](https://img.shields.io/badge/arXiv-2307.07260-b31b1b.svg)](https://arxiv.org/abs/2307.07260) Will show up in ITSC 2023, Spain.
@@ -20,17 +20,23 @@ Task detect dynamic points in maps and remove them, enhancing the maps:
 **Quick** try:
 
 - Teaser data on KITTI sequence 00 only 530Mb, download through [personal One Drive](https://hkustconnect-my.sharepoint.com/:f:/g/personal/qzhangcb_connect_ust_hk/Eki3-eqmhWJDjucGA23TNU4ByF9YuuShic7QZc9aPjmp4w?e=Wd4W0J)
-- Go to methods folder, build and run through `./build/${methods_name}_run ${data_path, e.g. /data/00} ${config.yaml} -1 `
-
+- Go to methods folder, build and run through 
+  ```bash
+  ./build/${methods_name}_run ${data_path, e.g. /data/00} ${config.yaml} -1 
+  ```
+- Clone our repo:
+  ```bash
+  git clone --recurse-submodules https://github.com/KTH-RPL/DynamicMap_Benchmark.git
+  ```
 ## Methods:
 
 Please check in [`methods`](methods) folder.
 
 - [x] ERASOR: [RAL 2021 official link](https://github.com/LimHyungTae/ERASOR), [**benchmark implementation**](https://github.com/Kin-Zhang/ERASOR/tree/feat/no_ros)
 - [x] Removert: [IROS 2020 official link](https://github.com/irapkaist/removert), [**benchmark implementation**](TODO)
-- [x] Octomap: [ICRA2010 & AR 2013 official link](https://github.com/OctoMap/octomap_mapping), [**benchmark implementation**](https://github.com/Kin-Zhang/octomap/tree/feat/benchmark) Improved this in the paper.
+- [x] Octomap w GF: [**Benchmark improvement ITSC 2023**](https://github.com/Kin-Zhang/octomap/tree/feat/benchmark) origin mapping from [ICRA2010 & AR 2013 official link](https://github.com/OctoMap/octomap_mapping)
 - [ ] DUFOMap: Under review [**official link**](done_but_not_public_yet)
-- [ ] [dynablox](https://github.com/ethz-asl/dynablox): [ETH Arxiv official link](https://github.com/ethz-asl/dynablox), [**benchmark implementation**](done_but_not_public_yet)
+- [ ] [dynablox](https://github.com/ethz-asl/dynablox): [ETH Arxiv official link](https://github.com/ethz-asl/dynablox), [**Benchmark Adaptation**](done_but_not_public_yet)
 
 Please note that we provided the comparison methods also but modified a little bit for us to run the experiments quickly, but no modified on their methods' core. Please check the LICENSE of each method in their official link before using it.
 
@@ -48,9 +54,13 @@ Download all these dataset from [Zenodo online drive](done but not public yet).
 - [ ] [KTH-Indoor] Our own dataset, Collected by VLP-16/Mid-70 in kobuki.
 - [x] [UDI-Plane] Our own dataset, Collected by VLP-16 in a small vehicle.
 
+Read more in [scripts/README.md](scripts/README.md). Also if you want to create your own dataset, check [here](scripts/README.md#custom-dataset). 
+
+Welcome to contribute your dataset with ground truth to the community through pull request.
+
 ### Evaluation
 
-First all the methods will output the clean map, so we need to extract the ground truth label from gt label based on clean map. Why we need this? Since maybe some methods downsample in their pipeline, we need to extract the gt label from the downsampled map.
+First all the methods will output the clean map, if you are only **user on map clean task,** it's **enough**. But for evaluation, we need to extract the ground truth label from gt label based on clean map. Why we need this? Since maybe some methods downsample in their pipeline, we need to extract the gt label from the downsampled map.
 
 Check [create dataset readme part](scripts/README.md#evaluation) in the scripts folder to get more information. But you can directly download the dataset through the link we provided. Then no need to read the creation; just use the data you downloaded.
 

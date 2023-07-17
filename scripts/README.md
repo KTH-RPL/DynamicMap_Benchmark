@@ -11,7 +11,7 @@ It's better to view this `md` file through outline. No need to go through all of
 
 ## Evaluation
 
-This part include output the quantitative table and qualitative result automatically.
+This part include output the quantitative table and qualitative result automatically. To be updated scripts....
 
 All the methods will output the **clean map**, so we need to extract the ground truth label from gt label based on clean map. Why we need this? Since maybe some methods will downsample in their pipeline, so we need to extract the gt label from the downsampled map.
 
@@ -36,7 +36,7 @@ Make sure you have the `gt_cloud.pcd`, `method_output.pcd` and `method_output_ex
 
 Since you may wonder what's mistake happened in each methods, label with different intensity to view in CloudCompare. Check `view_maps.ipynb`. 
 
-![](../assets/imgs/demo_qualitative.png)
+<!-- ![](../assets/imgs/demo_qualitative.png) -->
 
 ## Data Creation
 
