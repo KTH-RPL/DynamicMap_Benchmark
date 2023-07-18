@@ -36,7 +36,7 @@ Please check in [`methods`](methods) folder.
 - [x] Removert: [IROS 2020 official link](https://github.com/irapkaist/removert), [**benchmark implementation**](TODO)
 - [x] Octomap w GF: [**Benchmark improvement ITSC 2023**](https://github.com/Kin-Zhang/octomap/tree/feat/benchmark) origin mapping from [ICRA2010 & AR 2013 official link](https://github.com/OctoMap/octomap_mapping)
 - [ ] DUFOMap: Under review [**official link**](done_but_not_public_yet)
-- [ ] [dynablox](https://github.com/ethz-asl/dynablox): [ETH Arxiv official link](https://github.com/ethz-asl/dynablox), [**Benchmark Adaptation**](done_but_not_public_yet)
+- [ ] dynablox: [ETH Arxiv official link](https://github.com/ethz-asl/dynablox), [**Benchmark Adaptation**](done_but_not_public_yet)
 
 Please note that we provided the comparison methods also but modified a little bit for us to run the experiments quickly, but no modified on their methods' core. Please check the LICENSE of each method in their official link before using it.
 
@@ -46,15 +46,13 @@ Last but not least, feel free to pull request if you want to add more methods. W
 
 ## Dataset & Scripts
 
-Download all these dataset from [Zenodo online drive](done but not public yet).
+Download all these dataset from [Zenodo online drive](https://zenodo.org/record/8160051). Or create by yourself through the [scripts we provided](scripts/README.md).
 
 - [x] [Semantic-Kitti, outdoor small town](https://semantic-kitti.org/dataset.html) VLP-64
 - [x] [Argoverse2.0, outdoor US cities](https://www.argoverse.org/av2.html#lidar-link) VLP-32
+- [x] [UDI-Plane] Our own dataset, Collected by VLP-16 in a small vehicle.
 - [ ] [KTH-Campuse] Our [Multi-Campus Dataset](https://mcdviral.github.io/), Collected by Leica RTC360 Total Station.
 - [ ] [KTH-Indoor] Our own dataset, Collected by VLP-16/Mid-70 in kobuki.
-- [x] [UDI-Plane] Our own dataset, Collected by VLP-16 in a small vehicle.
-
-Read more in [scripts/README.md](scripts/README.md). Also if you want to create your own dataset, check [here](scripts/README.md#custom-dataset). 
 
 Welcome to contribute your dataset with ground truth to the community through pull request.
 
@@ -72,6 +70,7 @@ Check [create dataset readme part](scripts/README.md#evaluation) in the scripts 
 
 This benchmark implementation is based on codes from several repositories as we mentioned in the beginning. Thanks for these authors who kindly open-sourcing their work to the community. Please see our paper reference section to get more information.
 
+This work was partially supported by the Wallenberg AI, Autonomous Systems and Software Program ([WASP](https://wasp-sweden.org/)) funded by the Knut and Alice Wallenberg Foundation
 ### Cite Our Paper
 
 Please cite our work if you find these useful for your research.
