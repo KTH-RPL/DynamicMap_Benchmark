@@ -3,7 +3,7 @@
 # Copyright (C) 2022-now, RPL, KTH Royal Institute of Technology
 # Author: Kin ZHANG  (https://kin-zhang.github.io/)
 #
-# If you find this repo helpful, please cite the respective publication in the repo.
+# If you find this repo helpful, please cite the respective publication in DynamicBenchmark.
 # This script is licensed under the terms of the MIT license.
 # For a copy, see <https://opensource.org/licenses/MIT>.
 '''

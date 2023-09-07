@@ -65,10 +65,13 @@ int main(int argc, char** argv) {
     pcl::KdTreeFLANN<pcl::PointXYZI> kdtree;
     kdtree.setInputCloud(et_cloud);
 
+    // check whether every gt point is in the et_cloud
     for (auto& point : gt_cloud->points) {
         std::vector<int> nearest_indices(1);
         std::vector<float> nearest_distances(1);
 
+        // if the nearest point in et_cloud for gt is too far, then this gt point is not in the et_cloud
+        // which means mark as dynamic since et_cloud remove this one.
         if (kdtree.nearestKSearch(point, 1, nearest_indices, nearest_distances) > 0) {
             float distance = std::sqrt(nearest_distances[0]);
             if (distance > min_dis_cnt_as_same) {
