@@ -2,7 +2,7 @@ A Dynamic Points Removal Benchmark in Point Cloud Maps
 ---
 
 [![arXiv](https://img.shields.io/badge/arXiv-2307.07260-b31b1b.svg)](https://arxiv.org/abs/2307.07260) 
-[![video](https://img.shields.io/badge/video-bilibili-09a4d7.svg)](https://youtu.be/pCHsNKXDJQM?si=nhbAnPrbaZJEqbjx)
+[![video](https://img.shields.io/badge/video-youtube-09a4d7.svg)](https://youtu.be/pCHsNKXDJQM?si=nhbAnPrbaZJEqbjx)
 Will show up in ITSC 2023, Spain.
 
 Here is preview on readme in codes. Task detect dynamic points in maps and remove them, enhancing the maps:
