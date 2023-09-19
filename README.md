@@ -1,11 +1,11 @@
 A Dynamic Points Removal Benchmark in Point Cloud Maps
 ---
 
-[![arXiv](https://img.shields.io/badge/arXiv-2307.07260-b31b1b.svg)](https://arxiv.org/abs/2307.07260) Will show up in ITSC 2023, Spain.
+[![arXiv](https://img.shields.io/badge/arXiv-2307.07260-b31b1b.svg)](https://arxiv.org/abs/2307.07260) 
+[![video](https://img.shields.io/badge/video-bilibili-09a4d7.svg)](https://youtu.be/pCHsNKXDJQM?si=nhbAnPrbaZJEqbjx)
+Will show up in ITSC 2023, Spain.
 
-Here is preview on readme in codes. I'm trying my best on updating all codes and datasets.
-
-Task detect dynamic points in maps and remove them, enhancing the maps:
+Here is preview on readme in codes. Task detect dynamic points in maps and remove them, enhancing the maps:
 
 <center>
 <img src="assets/imgs/background.png" width="80%">
@@ -79,7 +79,7 @@ Benchmark:
 
 ```
 @article{zhang2023benchmark,
-  author={Qingwen Zhang, Daniel Duberg, Ruoyu Geng, Mingkai Jia, Lujia Wang and Patric Jensfelt},
+  author={Zhang, Qingwen and Duberg, Daniel and Geng, Ruoyu and Jia, Mingkai and Wang, Lujia and Jensfelt, Patric},
   title={A Dynamic Points Removal Benchmark in Point Cloud Maps},
   journal={arXiv preprint arXiv:2307.07260},
   year={2023}

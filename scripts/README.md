@@ -15,7 +15,17 @@ This part include output the quantitative table and qualitative result automatic
 
 All the methods will output the **clean map**, so we need to extract the ground truth label from gt label based on clean map. Why we need this? Since maybe some methods will downsample in their pipeline, so we need to extract the gt label from the downsampled map.
 
-### 0. Create the eval data
+### 0. Run Methods
+
+Check the [`methods`](../methods) folder, there is a [README](../methods/README.md) file to guide you how to run all the methods. 
+
+Or check the shell script in [`0_run_methods_all.sh`](../scripts/sh/0_run_methods_all.sh), run them with one command.
+
+```bash
+./scripts/sh/0_run_methods_all.sh
+```
+
+### 1. Create the eval data
 ```bash
 # Check export_eval_pcd.cpp
 ./export_eval_pcd [folder that you have the output pcd] [method_name_output.pcd] [min_dis to view as the same point]
@@ -24,12 +34,22 @@ All the methods will output the **clean map**, so we need to extract the ground 
 ./export_eval_pcd /home/kin/bags/VLP16_cone_two_people octomapfg_output.pcd 0.05
 ```
 
-### 1. Print the score
-Check the script and the only thing you need do is change the folder path to your data folder. Or downloaded the result data to test if you want.
+Or check the shell script in [`1_export_eval_pcd.sh`](../scripts/sh/1_export_eval_pcd.sh), run them with one command.
+
 ```bash
-python3 evaluate_benchmark_all_pts.py
+./scripts/sh/1_export_eval_pcd.sh
 ```
 
+### 2. Print the score
+Check the script and the only thing you need do is change the folder path to *your data folder*. And Select the methods you want to compare. Please try to open and read the [script first](py/eval/evaluate_all.py)
+
+```bash
+python3 scripts/py/eval/evaluate_all.py
+```
+
+Here is the demo output:
+
+![](../assets/imgs/eval_demo.png)
 ### Optional: Create the visualization
 
 Make sure you have the `gt_cloud.pcd`, `method_output.pcd` and `method_output_exportGT.pcd` which produced by above part.
