@@ -51,7 +51,8 @@ Download all these dataset from [Zenodo online drive](https://zenodo.org/record/
 - [x] [Semantic-Kitti, outdoor small town](https://semantic-kitti.org/dataset.html) VLP-64
 - [x] [Argoverse2.0, outdoor US cities](https://www.argoverse.org/av2.html#lidar-link) VLP-32
 - [x] [UDI-Plane] Our own dataset, Collected by VLP-16 in a small vehicle.
-- [ ] [KTH-Campuse] Our [Multi-Campus Dataset](https://mcdviral.github.io/), Collected by Leica RTC360 Total Station.
+- [ ] [KTH-Campuse] Our [Multi-Campus Dataset](https://mcdviral.github.io/), Collected by [Leica RTC360 3D Laser Scan](https://leica-geosystems.com/products/laser-scanners/scanners/leica-rtc360).
+- [ ] [HKUST-Building] Our [fusionportable Dataset](https://fusionportable.github.io/dataset/fusionportable/), collected by [Leica BLK360 Imaging Laser Scanner](https://leica-geosystems.com/products/laser-scanners/scanners/blk360)
 - [ ] [KTH-Indoor] Our own dataset, Collected by VLP-16/Mid-70 in kobuki.
 
 Welcome to contribute your dataset with ground truth to the community through pull request.
@@ -90,7 +91,8 @@ DUFOMap:
 
 ```
 @article{duberg2023dufomap,
-  author={Daniel Duberg*, Qingwen Zhang*, Mingkai Jia and Patric Jensfelt},
-  title={{DUFOMap}: TBD}, 
+  author={Duberg, Daniel and Zhang, Qingwen and Jia, Mingkai and Jensfelt, Patric},
+  title={DUFOMap: DUFOMap: Efficient Dynamic Awareness Mapping}, 
+  journal={TB public},
 }
 ```
