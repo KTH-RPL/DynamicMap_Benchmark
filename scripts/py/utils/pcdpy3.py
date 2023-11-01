@@ -24,7 +24,7 @@ def load_pcd(path):
     data.xyzi2np()
     return data
 
-def save_pcd(path, data: np.array, pos=np.array([0,0,0,1,0,0,0])):
+def save_pcd(path, data: np.array, pos=np.array([0,0,0,1,0,0,0]), rgb: np.array = None):
     # need be data: [N,3] or [N,4] [x,y,z,intensity]
     # pos: [x,y,z, qw,qx,qy,qz]
     # assert with print
@@ -55,13 +55,25 @@ def save_pcd(path, data: np.array, pos=np.array([0,0,0,1,0,0,0])):
             pc_data['y'] = data_float32[:, 1]
             pc_data['z'] = data_float32[:, 2]
             pc_data['intensity'] = data_float32[:, 3]
-        
+
+        elif(data.shape[1] == 3 and rgb is not None and data.shape[0] == rgb.shape[0]):
+            md['fields'].append('rgb')
+            md['size'].append(4)
+            md['type'].append('F')
+            md['count'].append(1)
+            pc_data = np.zeros(data_float32.shape[0], dtype=[('x', np.float32), ('y', np.float32), ('z', np.float32), ('rgb', np.uint32)])
+            pc_data['x'] = data_float32[:, 0]
+            pc_data['y'] = data_float32[:, 1]
+            pc_data['z'] = data_float32[:, 2]
+            rgb = rgb.astype(np.uint32)
+            pc_data['rgb'] = (rgb[:, 0] << 16) | (rgb[:, 1] << 8) | rgb[:, 2]
+
         elif(data.shape[1] == 3):
             pc_data = np.zeros(data_float32.shape[0], dtype=[('x', np.float32), ('y', np.float32), ('z', np.float32)])
             pc_data['x'] = data_float32[:, 0]
             pc_data['y'] = data_float32[:, 1]
             pc_data['z'] = data_float32[:, 2]
-
+        
         if pc_data is not None:
             pc = PointCloud(md, pc_data)
             point_cloud_to_fileobj(pc, fileobj)
