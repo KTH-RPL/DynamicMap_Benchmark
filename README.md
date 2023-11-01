@@ -3,7 +3,6 @@ A Dynamic Points Removal Benchmark in Point Cloud Maps
 
 [![arXiv](https://img.shields.io/badge/arXiv-2307.07260-b31b1b.svg)](https://arxiv.org/abs/2307.07260) 
 [![video](https://img.shields.io/badge/video-youtube-09a4d7.svg)](https://youtu.be/pCHsNKXDJQM?si=nhbAnPrbaZJEqbjx)
-Will show up in ITSC 2023, Spain.
 
 Here is preview on readme in codes. Task detect dynamic points in maps and remove them, enhancing the maps:
 
@@ -19,15 +18,17 @@ Here is preview on readme in codes. Task detect dynamic points in maps and remov
 
 **Quick** try:
 
-- Teaser data on KITTI sequence 00 only 530Mb, download through [personal One Drive](https://hkustconnect-my.sharepoint.com/:f:/g/personal/qzhangcb_connect_ust_hk/Eki3-eqmhWJDjucGA23TNU4ByF9YuuShic7QZc9aPjmp4w?e=Wd4W0J)
-- Go to methods folder, build and run through 
-  ```bash
-  ./build/${methods_name}_run ${data_path, e.g. /data/00} ${config.yaml} -1 
-  ```
+- Teaser data on KITTI sequence 00 only 384.8MB in [Zenodo online drive](https://zenodo.org/record/8160051)
 - Clone our repo:
   ```bash
   git clone --recurse-submodules https://github.com/KTH-RPL/DynamicMap_Benchmark.git
   ```
+- Go to methods folder, build and run through 
+  ```bash
+  cd methods/${methods_name} && cmake -B build && cmake --build build
+  ./build/${methods_name}_run ${data_path, e.g. /data/00} ${config.yaml} -1 
+  ```
+
 ## Methods:
 
 Please check in [`methods`](methods) folder.
