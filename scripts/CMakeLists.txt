@@ -30,3 +30,17 @@ endfunction()
 create_executable(create_rawmap cpp/create_rawmap.cpp)
 create_executable(extract_gtcloud cpp/extract_gtcloud.cpp)
 create_executable(export_eval_pcd cpp/export_eval_pcd.cpp)
+
+
+find_package(rosbag QUIET)
+# Add the executable and link the libraries for read_bag_example only if rosbag is found
+if(rosbag_FOUND)
+	# Find the required packages
+	find_package(catkin REQUIRED COMPONENTS roscpp sensor_msgs tf2 tf2_ros tf2_eigen)
+	# Include the directories
+	include_directories(${catkin_INCLUDE_DIRS})
+	add_executable(pcds_to_rosbag cpp/pcds_to_rosbag.cpp)
+	target_link_libraries(pcds_to_rosbag ${catkin_LIBRARIES} ${rosbag_LIBRARIES} ${PCL_LIBRARIES} ${LOG_LIB})
+else()
+	message(WARNING "rosbag package not found. Skipping read_bag_example.")
+endif()
