@@ -151,6 +151,8 @@ Note!!
 	Example here:
 	![](../assets/imgs/kitti_01_data_demo.png)
 
+3. SemanticKITTI pose file is not ground truth pose but run SuMa, more discussion and different can be found here in [semantic-kitti-api/issues/140](https://github.com/PRBonn/semantic-kitti-api/issues/140). We have extra different odometry pose result in DUFOMap paper, based on [scripts/py/data/extract_diff_pose.py](py/data/extract_diff_pose.py)
+
 ##### A.2 Export Ground Truth
 
 Need install C++ dependencies in main README

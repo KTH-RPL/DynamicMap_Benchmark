@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
     google::SetStderrLogging(google::INFO);
 
     if (argc < 4) {
-        LOG(ERROR) << "Usage: " << argv[0] << " [pcd_folder] [pcd_folder] [algorithm_output.pcd] [min_dis_cnt_as_same]";
+        LOG(ERROR) << "Usage: " << argv[0] << " [pcd_folder] [algorithm_output.pcd] [min_dis_cnt_as_same]";
         return 1;
     }
 
