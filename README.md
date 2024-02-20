@@ -80,12 +80,16 @@ Please cite our work if you find these useful for your research.
 Benchmark:
 
 ```
-@article{zhang2023benchmark,
+@inproceedings{zhang2023benchmark,
   author={Zhang, Qingwen and Duberg, Daniel and Geng, Ruoyu and Jia, Mingkai and Wang, Lujia and Jensfelt, Patric},
-  title={A Dynamic Points Removal Benchmark in Point Cloud Maps},
-  journal={arXiv preprint arXiv:2307.07260},
-  year={2023}
-}
+  booktitle={2023 IEEE 26th International Conference on Intelligent Transportation Systems (ITSC)}, 
+  title={A Dynamic Points Removal Benchmark in Point Cloud Maps}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={608-614},
+  keywords={Point cloud compression;Measurement;Codes;Heuristic algorithms;Benchmark testing;Task analysis;Tuning},
+  doi={10.1109/ITSC57777.2023.10422094}}
 ```
 
 DUFOMap:
