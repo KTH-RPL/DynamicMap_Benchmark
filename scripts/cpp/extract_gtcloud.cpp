@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
 
     std::string pcd_folder = argv[1];
     int downsample_flag = 0;
-    double grid_size = 0.1;
+    double grid_size = 0.2; // 0.2m same with ERASOR downsample ground truth, but benchmark didn't downsample!
 
     if(argc == 2) {
         LOG(INFO) << "No downsample flag, set to 0, save all points";
@@ -150,11 +150,36 @@ int main(int argc, char* argv[]) {
         // *gt_cloud_intensity += *cloud_intensity;
         cnt++;
     }
+    
+    pcl::PointCloud<pcl::PointXYZI>::Ptr cloud_filtered(new pcl::PointCloud<pcl::PointXYZI>);
+    if(downsample_flag!=0){
+        
+        pcl::VoxelGrid<pcl::PointXYZI> sor;
+        sor.setInputCloud(gt_cloud);
+        sor.setLeafSize(grid_size, grid_size, grid_size);
+        sor.filter(*cloud_filtered);
+        // 2. Find nearest point to update intensity (index and id)
+        pcl::KdTreeFLANN<pcl::PointXYZI> kdtree;
+        kdtree.setInputCloud(gt_cloud);
 
+        int K = 1;
+        std::vector<int>   pointIdxNKNSearch(K);
+        std::vector<float> pointNKNSquaredDistance(K);
+
+        // Set dst <- output
+        for (auto &pt: cloud_filtered->points) {
+            if (kdtree.nearestKSearch(pt, K, pointIdxNKNSearch, pointNKNSquaredDistance) > 0) {
+                pt.intensity = (*gt_cloud)[pointIdxNKNSearch[0]].intensity;
+            }
+        }
+    }
+    else{
+        cloud_filtered = gt_cloud;
+    }
     // file name in last folder pcd_folder
     std::filesystem::path folder_path(pcd_folder);
     std::filesystem::path gtcloud_path = folder_path.parent_path() / "gt_cloud.pcd";
-    pcl::io::savePCDFileBinary(gtcloud_path.string(), *gt_cloud);
+    pcl::io::savePCDFileBinary(gtcloud_path.string(), *cloud_filtered);
 
     LOG(INFO) << "gt_cloud saved to " << gtcloud_path.string() << " Check file there";
     TOC("extract_gtcloud", true);
