@@ -31,15 +31,16 @@ Here is a preview of the readme in codes. Task detects dynamic points in maps an
   ./build/${methods_name}_run ${data_path, e.g. /data/00} ${config.yaml} -1 
   ```
 
+
 ## Methods:
 
 Please check in [`methods`](methods) folder.
 
 - [x] ERASOR: [RAL 2021 official link](https://github.com/LimHyungTae/ERASOR), [**benchmark implementation**](https://github.com/Kin-Zhang/ERASOR/tree/feat/no_ros)
-- [x] Removert: [IROS 2020 official link](https://github.com/irapkaist/removert), [**benchmark implementation**](TODO)
+- [x] Removert: [IROS 2020 official link](https://github.com/irapkaist/removert), [**benchmark implementation**](https://github.com/Kin-Zhang/removert)
 - [x] Octomap w GF: [**Benchmark improvement ITSC 2023**](https://github.com/Kin-Zhang/octomap/tree/feat/benchmark) origin mapping from [ICRA2010 & AR 2013 official link](https://github.com/OctoMap/octomap_mapping)
-- [ ] DUFOMap: Under review [**official link**](https://github.com/KTH-RPL/dufomap)
-- [ ] dynablox: [RAL 2023 official link](https://github.com/ethz-asl/dynablox), [**Benchmark Adaptation**](done_but_not_public_yet)
+- [ ] DUFOMap: [Arxiv link](https://arxiv.org/abs/2403.01449), [**official code**](https://github.com/KTH-RPL/dufomap)
+- [ ] dynablox: [RAL 2023 official link](https://github.com/ethz-asl/dynablox), [**Benchmark Adaptation**](TODO)
 
 Please note that we provided the comparison methods also but modified a little bit for us to run the experiments quickly, but no modified on their methods' core. Please check the LICENSE of each method in their official link before using it.
 
@@ -100,7 +101,7 @@ DUFOMap:
 @article{daniel2024dufomap,
     author    = {Daniel, Duberg and Zhang, Qingwen and Jia, Mingkai and Jensfelt, Patric},
     title     = {DUFOMap: Efficient Dynamic Awareness Mapping},
-    journal   = {arXiv},
+    journal   = {arXiv preprint arXiv:2403.01449},
     year      = {2024},
 }
 ```
