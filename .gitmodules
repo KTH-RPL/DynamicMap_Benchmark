@@ -7,3 +7,6 @@
 [submodule "methods/removert"]
 	path = methods/removert
 	url = https://github.com/Kin-Zhang/removert.git
+[submodule "methods/DeFlow"]
+	path = methods/DeFlow
+	url = git@github.com:KTH-RPL/DeFlow.git

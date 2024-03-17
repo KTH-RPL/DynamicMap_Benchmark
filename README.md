@@ -1,9 +1,9 @@
 A Dynamic Points Removal Benchmark in Point Cloud Maps
 ---
-
-[![arXiv](https://img.shields.io/badge/arXiv-2307.07260-b31b1b.svg)](https://arxiv.org/abs/2307.07260) 
-[![video](https://img.shields.io/badge/中文-BiliBili-09a4d7.svg)](https://www.bilibili.com/video/BV1bC4y1R7h3)
-[![video](https://img.shields.io/badge/English-YouTube-ff0000.svg)](https://youtu.be/pCHsNKXDJQM?si=nhbAnPrbaZJEqbjx)
+<!-- [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/a-dynamic-points-removal-benchmark-in-point/dynamic-point-removal-on-semi-indoor)](https://paperswithcode.com/sota/dynamic-point-removal-on-semi-indoor?p=a-dynamic-points-removal-benchmark-in-point) -->
+[![arXiv](https://img.shields.io/badge/arXiv-2307.07260-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2307.07260) 
+[![video](https://img.shields.io/badge/中文-Bilibili-74b9ff?logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1bC4y1R7h3)
+[![video](https://img.shields.io/badge/video-YouTube-FF0000?logo=youtube&logoColor=white)](https://youtu.be/pCHsNKXDJQM?si=nhbAnPrbaZJEqbjx)
 [![poster](https://img.shields.io/badge/Poster-6495ed?style=flat&logo=Shotcut&logoColor=wihte)](https://hkustconnect-my.sharepoint.com/:b:/g/personal/qzhangcb_connect_ust_hk/EQvNHf9JNEtNpyPg1kkNLNABk0v1TgGyaM_OyCEVuID4RQ?e=TdWzAq)
     
 Here is a preview of the readme in codes. Task detects dynamic points in maps and removes them, enhancing the maps:
@@ -36,15 +36,25 @@ Here is a preview of the readme in codes. Task detects dynamic points in maps an
 
 Please check in [`methods`](methods) folder.
 
+Offline (need prior map).
 - [x] ERASOR: [RAL 2021 official link](https://github.com/LimHyungTae/ERASOR), [**benchmark implementation**](https://github.com/Kin-Zhang/ERASOR/tree/feat/no_ros)
 - [x] Removert: [IROS 2020 official link](https://github.com/irapkaist/removert), [**benchmark implementation**](https://github.com/Kin-Zhang/removert)
-- [x] Octomap w GF: [**Benchmark improvement ITSC 2023**](https://github.com/Kin-Zhang/octomap/tree/feat/benchmark) origin mapping from [ICRA2010 & AR 2013 official link](https://github.com/OctoMap/octomap_mapping)
+- [ ] BeautyMap: [under review](), [**official code**](https://github.com/HKUSTGZ-IADC/BeautyMap)
+
+Online (w/o prior map):
+- [x] Octomap: [ICRA2010 & AR 2013 official link](https://github.com/OctoMap/octomap_mapping), [**Benchmark implementation**](https://github.com/Kin-Zhang/octomap/tree/feat/benchmark)
+- [x] Octomap w GF: [ITSC 2023](https://arxiv.org/abs/2307.07260), [**Benchmark improvement ITSC 2023**](https://github.com/Kin-Zhang/octomap/tree/feat/benchmark) 
 - [ ] DUFOMap: [Arxiv link](https://arxiv.org/abs/2403.01449), [**official code**](https://github.com/KTH-RPL/dufomap)
-- [ ] dynablox: [RAL 2023 official link](https://github.com/ethz-asl/dynablox), [**Benchmark Adaptation**](TODO)
+- [ ] dynablox: [RAL 2023 official link](https://github.com/ethz-asl/dynablox), [**Benchmark Adaptation**]()
+
+Learning-based (data-driven) (w pretrain-weights provided):
+- [x] DeFlow: [ICRA 2024](https://arxiv.org/abs/2401.16122), [**Benchmark Adaptation**](https://github.com/KTH-RPL/DeFlow/tree/feature/dynamicmap)
+
 
 Please note that we provided the comparison methods also but modified a little bit for us to run the experiments quickly, but no modified on their methods' core. Please check the LICENSE of each method in their official link before using it.
 
-You will find all methods in this benchmark under `methods` folder. So that you can easily reproduce the experiments. And we will also directly provide [the result data](TODO) so that you don't need to run the experiments by yourself.
+You will find all methods in this benchmark under `methods` folder. So that you can easily reproduce the experiments. [Or click here to check our score screenshot directly](assets/imgs/eval_demo.png). 
+<!-- And we will also directly provide [the result data](TODO) so that you don't need to run the experiments by yourself. Or  -->
 
 Last but not least, feel free to pull request if you want to add more methods. Welcome!
 
@@ -57,7 +67,8 @@ Download all these dataset from [Zenodo online drive](https://zenodo.org/record/
 - [x] [UDI-Plane] Our own dataset, Collected by VLP-16 in a small vehicle.
 - [ ] [KTH-Campuse] Our [Multi-Campus Dataset](https://mcdviral.github.io/), Collected by [Leica RTC360 3D Laser Scan](https://leica-geosystems.com/products/laser-scanners/scanners/leica-rtc360).
 - [ ] [HKUST-Building] Our [fusionportable Dataset](https://fusionportable.github.io/dataset/fusionportable/), collected by [Leica BLK360 Imaging Laser Scanner](https://leica-geosystems.com/products/laser-scanners/scanners/blk360)
-- [ ] [KTH-Indoor] Our own dataset, Collected by VLP-16/Mid-70 in kobuki.
+- [ ] [Indoor-Floor] Our own dataset, Collected by Livox mid-360 in a quadruped robot.
+<!-- - [ ] [KTH-Indoor] Our own dataset, Collected by VLP-16/Mid-70 in kobuki. -->
 
 Welcome to contribute your dataset with ground truth to the community through pull request.
 

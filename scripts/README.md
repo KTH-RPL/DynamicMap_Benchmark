@@ -50,6 +50,9 @@ python3 scripts/py/eval/evaluate_all.py
 Here is the demo output:
 
 ![](../assets/imgs/eval_demo.png)
+
+
+
 ### Optional: Create the visualization
 
 Make sure you have the `gt_cloud.pcd`, `method_output.pcd` and `method_output_exportGT.pcd` which produced by above part.
