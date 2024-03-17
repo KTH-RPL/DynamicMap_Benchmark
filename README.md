@@ -36,25 +36,24 @@ Here is a preview of the readme in codes. Task detects dynamic points in maps an
 
 Please check in [`methods`](methods) folder.
 
-Offline (need prior map).
-- [x] ERASOR: [RAL 2021 official link](https://github.com/LimHyungTae/ERASOR), [**benchmark implementation**](https://github.com/Kin-Zhang/ERASOR/tree/feat/no_ros)
-- [x] Removert: [IROS 2020 official link](https://github.com/irapkaist/removert), [**benchmark implementation**](https://github.com/Kin-Zhang/removert)
-- [ ] BeautyMap: [under review](), [**official code**](https://github.com/HKUSTGZ-IADC/BeautyMap)
-
 Online (w/o prior map):
-- [x] Octomap: [ICRA2010 & AR 2013 official link](https://github.com/OctoMap/octomap_mapping), [**Benchmark implementation**](https://github.com/Kin-Zhang/octomap/tree/feat/benchmark)
 - [x] Octomap w GF: [ITSC 2023](https://arxiv.org/abs/2307.07260), [**Benchmark improvement ITSC 2023**](https://github.com/Kin-Zhang/octomap/tree/feat/benchmark) 
 - [ ] DUFOMap: [Arxiv link](https://arxiv.org/abs/2403.01449), [**official code**](https://github.com/KTH-RPL/dufomap)
+- [x] Octomap: [ICRA2010 & AR 2013 official link](https://github.com/OctoMap/octomap_mapping), [**Benchmark implementation**](https://github.com/Kin-Zhang/octomap/tree/feat/benchmark)
 - [ ] dynablox: [RAL 2023 official link](https://github.com/ethz-asl/dynablox), [**Benchmark Adaptation**]()
 
 Learning-based (data-driven) (w pretrain-weights provided):
 - [x] DeFlow: [ICRA 2024](https://arxiv.org/abs/2401.16122), [**Benchmark Adaptation**](https://github.com/KTH-RPL/DeFlow/tree/feature/dynamicmap)
 
+Offline (need prior map).
+- [ ] BeautyMap: [under review](), [**official code**](https://github.com/HKUSTGZ-IADC/BeautyMap)
+- [x] ERASOR: [RAL 2021 official link](https://github.com/LimHyungTae/ERASOR), [**benchmark implementation**](https://github.com/Kin-Zhang/ERASOR/tree/feat/no_ros)
+- [x] Removert: [IROS 2020 official link](https://github.com/irapkaist/removert), [**benchmark implementation**](https://github.com/Kin-Zhang/removert)
 
 Please note that we provided the comparison methods also but modified a little bit for us to run the experiments quickly, but no modified on their methods' core. Please check the LICENSE of each method in their official link before using it.
 
 You will find all methods in this benchmark under `methods` folder. So that you can easily reproduce the experiments. [Or click here to check our score screenshot directly](assets/imgs/eval_demo.png). 
-<!-- And we will also directly provide [the result data](TODO) so that you don't need to run the experiments by yourself. Or  -->
+<!-- And we will also directly provide [the result data](TODO) so that you don't need to run the experiments by yourself. ... Where to save this?  -->
 
 Last but not least, feel free to pull request if you want to add more methods. Welcome!
 
