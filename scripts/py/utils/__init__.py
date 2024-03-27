@@ -26,3 +26,21 @@ def check_file_exists(file_path):
         exit(0)
     else:
         return file_path
+    
+
+def filterOutRange(points: np.array, labels: np.array, max_range=50, min_range=3):
+    """
+    points: [N, 4] [x, y, z, intensity]
+    labels: [N, 1] instance & semantic labels
+    """
+    sem_label = labels & 0xFFFF
+    points_xyz = points[:, :3]
+    distance = np.linalg.norm(points_xyz, axis=1)
+    valid_mask = distance < max_range
+
+    # HARD CODE HERE: since ego vehicle pts is labeled as unlabeled/outlier we will set to dynamic pts also
+    ego_pts_mask = (distance < min_range) & ((sem_label == 0) | (sem_label == 1))
+    sem_label[ego_pts_mask] = 252
+
+    return points[valid_mask], sem_label[valid_mask]
+    

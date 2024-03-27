@@ -105,7 +105,7 @@ def get_colored_info(data_folder, lidar_timestamp_ns, sweep_lidar):
     return sweep_rgb
 
 if __name__ == "__main__":
-    cetner_scense_xyz = np.array([0,0,0])
+    center_scenes_xyz = np.array([0,0,0])
     save_folder = DATA_FOLDER.split('/')[-1][:4]
     if not os.path.exists(SAVE_FOLDER):
         os.makedirs(SAVE_FOLDER)
@@ -128,10 +128,10 @@ if __name__ == "__main__":
 
         pose2origin = ego2up_lidar.inverse().compose(pose)
         if i == 0:
-            cetner_scense_xyz = np.array([pose.translation[0], pose.translation[1], pose.translation[2]])
+            center_scenes_xyz = np.array([pose.translation[0], pose.translation[1], pose.translation[2]])
             pose2origin.translation = np.array([0,0,0])
         else:
-            pose2origin.translation = pose.translation - cetner_scense_xyz
+            pose2origin.translation = pose.translation - center_scenes_xyz
 
         # extract point cloud data with intensity
         sweep_df = io_utils.read_feather(abs_path_pts_file)

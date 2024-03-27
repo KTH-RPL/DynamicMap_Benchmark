@@ -64,6 +64,7 @@ Since you may wonder what's mistake happened in each methods, label with differe
 ## Data Creation
 
 We provided scripts to extract data from KITTI and Argoverse 2.0. Importantly, you can always run them on your custom dataset collected by yourself. Every folder we extract or process have unified format with PCD files have point cloud data and pose in `VIEWPOINT` filed, and folder tree like this:
+
 ```bash
 ├── 00 # KITTI sequence 00
 │   ├── gt_cloud.pcd
@@ -115,6 +116,7 @@ roscore # since need read rosbag through scripts
 Demo Screenshot:
 
 ![](../assets/imgs/semindoor_data_preview.png)
+
 ### Open-source Dataset
 
 This part is for open-source dataset, include SemanticKITTI and Argoverse2.0.
@@ -141,37 +143,34 @@ extract the semantic-kitti dataset from the raw data, when you download the orig
 │       └── sequences
 ```
 
-Modified the `ORIGIN_PATH` in [extract_semkitti.py](py/data/extract_semkitti.py), then run the script:
+After downloading the official dataset, Run the script like follows:
 ```
-python3 scripts/extract_semkitti.py
+python3 scripts/data/extract_semkitti.py --original_path /home/kin/data/KITTI/SemanticKitti --sequence 00 --save_data_folder /home/kin/data/DynamicMap --gt_cloud True
 ```
 
 Note!! 
 
-1. We keep poses as SemanticKITTI gt one some package may change to hard. We keep it as official dataset.
-2. You can get the sensor pose in the PCD VIEWPOINT Field, so you don't need pose file etc. If you are using CloudCompare to view, drag all pcd files to windows, you will have the correct whole map view. (NOTE Since we already transform to world frame CloudCompare in 2.11 version will looks correct map but version to 2.12+ will have double effect on VIEWPOINT Field [you can comment the transform line if you don't like that.] )
+1. SemanticKITTI pose file is not ground truth pose but run SuMa, more discussion and different can be found here in [semantic-kitti-api/issues/140](https://github.com/PRBonn/semantic-kitti-api/issues/140). We have extra different odometry pose result in [DUFOMap paper, Sec V-C, Table III](https://arxiv.org/pdf/2403.01449), based on [scripts/py/data/extract_diff_pose.py](py/data/extract_diff_pose.py)
+
+2. You can get the sensor pose in the PCD `VIEWPOINT` Field, so you don't need pose file etc. 
+   If you are using CloudCompare to view, drag all pcd files to windows, you will have the correct whole map view. 
+   (NOTE Since we already transform to world frame CloudCompare in 2.11 version will looks correct map 
+   but version to 2.12+ will have double effect on VIEWPOINT Field [you can comment the transform line if you don't like that.] )
 	
 	Example here:
 	![](../assets/imgs/kitti_01_data_demo.png)
 
-3. SemanticKITTI pose file is not ground truth pose but run SuMa, more discussion and different can be found here in [semantic-kitti-api/issues/140](https://github.com/PRBonn/semantic-kitti-api/issues/140). We have extra different odometry pose result in DUFOMap paper, based on [scripts/py/data/extract_diff_pose.py](py/data/extract_diff_pose.py)
+3. View the ground truth in CloudCompare, intensity=1 means dynamic which are red points in images:
 
-##### A.2 Export Ground Truth
+    ![](../assets/imgs/kitti_gt.png)
 
-Need install C++ dependencies in main README
+4. 2024/03/27 Updated version limit the range because we find the ground truth label is not correct in the far range, so we limit the range to 50m. You can change the range in the script.
+   
+    ![](../assets/imgs/label_des.png)
 
-```bash
-cd DynamicMap_Benchmark/scripts
-cmake -B build && cmake --build build 
-➜  scripts git:(master) ✗ ./build/extract_gtcloud /home/kin/data/00/pcd
-I20230628 10:29:03.206132 15928 extract_gtcloud.cpp:42] No downsample flag, set to 0, save all points
-I20230628 10:29:03.889710 15928 extract_gtcloud.cpp:152] gt_cloud saved to /home/kin/data/00/gt_cloud.pcd Check file there
-[extract_gtcloud] takes 683.485297 ms
-```
+<!-- 5. Tracking seq 19, the original pose I cannot parse as previous semantickitti dataset, so I run kiss_icp_pipeline to get new pose file. Replace the original pose file with the new one. And tracking seq 19 gt label max range looks like 40m since I check 50m sitll have some mislabel pedestrians. -->
 
-View the ground truth in CloudCompare, intensity=1 means dynamic which are red points in images:
 
-![](../assets/imgs/kitti_gt.png)
 
 #### Argoverse 2.0
 

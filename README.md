@@ -1,5 +1,6 @@
 A Dynamic Points Removal Benchmark in Point Cloud Maps
 ---
+
 <!-- [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/a-dynamic-points-removal-benchmark-in-point/dynamic-point-removal-on-semi-indoor)](https://paperswithcode.com/sota/dynamic-point-removal-on-semi-indoor?p=a-dynamic-points-removal-benchmark-in-point) -->
 [![arXiv](https://img.shields.io/badge/arXiv-2307.07260-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2307.07260) 
 [![video](https://img.shields.io/badge/中文-Bilibili-74b9ff?logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1bC4y1R7h3)
@@ -38,6 +39,11 @@ Feel free to pull a request if you want to add more methods or datasets. Welcome
 - **2024/03/18** Added the first data-driven method [DeFlow](https://github.com/KTH-RPL/DeFlow/tree/feature/dynamicmap) into our benchmark. Create [BeautyMap](https://github.com/HKUSTGZ-IADC/BeautyMap) repo (wait for public and open-source after review).
 - **2024/03/08** [DUFOMap](https://arxiv.org/abs/2403.01449) is public now. Code **will be added** soon with dynablox benchmark adaptation also. **Fix statements** on our ITSC2023 paper: KITTI sequences pose are also from SemanticKITTI which used SuMa. In the DUFOMap paper Section V-C, Table III, we present the dynamic removal result on different pose sources. Check discussion in [DUFOMap](https://arxiv.org/abs/2403.01449) paper if you are interested.
 - **2023/06/13** The [benchmark paper](https://arxiv.org/abs/2307.07260) Accepted by ITSC 2023 and release five methods (Octomap, Octomap w GF, ERASOR, Removert) and three datasets (01, 05, av2, semindoor) in [benchmark paper](https://arxiv.org/abs/2307.07260).
+
+---
+
+- [ ] 2024/03/27: I will update a document page soon (tutorial, manual book, and new online leaderboard), and point out the commit for each paper. Since there are some minor mistakes in the first version. Stay tune with us!
+
 
 ## Methods:
 
