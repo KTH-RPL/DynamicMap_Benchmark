@@ -145,7 +145,7 @@ extract the semantic-kitti dataset from the raw data, when you download the orig
 
 After downloading the official dataset, Run the script like follows:
 ```
-python3 scripts/data/extract_semkitti.py --original_path /home/kin/data/KITTI/SemanticKitti --sequence 00 --save_data_folder /home/kin/data/DynamicMap --gt_cloud True
+python3 scripts/data/extract_semkitti.py --original_path /home/kin/data/KITTI/SemanticKitti --save_data_folder /home/kin/data/DynamicMap --gt_cloud True --sequence "'00'" 
 ```
 
 Note!! 

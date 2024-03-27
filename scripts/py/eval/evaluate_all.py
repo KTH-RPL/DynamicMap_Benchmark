@@ -50,8 +50,9 @@ if __name__ == "__main__":
             SA = float(correct_static) / float(num_gt['static']) * 100
             DA = float(correct_dynamic) / float(num_gt['dynamic']) * 100
             AA = math.sqrt(SA * DA)
-            printed_data.append([algo] + [num_et['static'], num_et['dynamic'], SA, DA,  AA])
+            HA = 2 * SA * DA / (SA + DA)
+            printed_data.append([algo] + [num_et['static'], num_et['dynamic'], SA, DA,  AA, HA])
             # break
         print(f"Evaluation results in seq {bc.HEADER}{seq}{bc.ENDC}")
-        print(tabulate(printed_data, headers=['Methods', '# static', '# dynamics', 'SA [%] ↑', 'DA [%] ↑', 'AA [%] ↑'], tablefmt='orgtbl'))
+        print(tabulate(printed_data, headers=['Methods', '# static', '# dynamics', 'SA [%] ↑', 'DA [%] ↑', 'AA [%] ↑', 'HA [%] ↑'], tablefmt='orgtbl'))
     print(f"Time cost: {(time() - st_time):.2f}s")

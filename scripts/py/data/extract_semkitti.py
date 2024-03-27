@@ -33,8 +33,8 @@ from utils.pcdpy3 import save_pcd
 
 # selected frame to release the pressure of the memory
 FIX_SEQ_FRAME_RANGE = {"00": [4390, 4530], 
-                    "01": [150, 250], 
-                    "02": [860, 950], 
+                    # "01": [150, 250], 
+                    # "02": [860, 950], 
                     "05": [2350, 2670],
                     "07": [630, 820],
                     "19": [150, 512]}
@@ -46,14 +46,13 @@ def main(
     gt_cloud: bool = False,
 ):
     SaveDataFolder = f"{save_data_folder}/{sequence}/pcd"
-    sequence = str(sequence) if isinstance(sequence, int) else sequence
     # get the path of the data
     pose_file = os.path.join(original_path + "/data_odometry_labels/dataset/sequences", sequence, "poses.txt")
     calib_file = os.path.join(original_path + "/data_odometry_calib/dataset/sequences", sequence, "calib.txt")
     pts_folder = os.path.join(original_path + "/data_odometry_velodyne/dataset/sequences", sequence, "velodyne")
     labels_folder = os.path.join(original_path + "/data_odometry_labels/dataset/sequences", sequence, "labels")
 
-    if not (os.path.isfile(pose_file) and os.path.isfile(calib_file)):
+    if not (os.path.isfile(pose_file) and os.path.isfile(calib_file) and os.path.isdir(labels_folder)):
         print(f"Changing to another mode.. where the data and label are in the same folder..")
         pose_file = os.path.join(original_path, sequence, "poses.txt")
         calib_file = os.path.join(original_path, sequence, "calib.txt")
@@ -61,7 +60,7 @@ def main(
         labels_folder = os.path.join(original_path, sequence, "labels")
         
         if not (os.path.isfile(pose_file) and os.path.isfile(calib_file)):
-            print(f"{bc.FAIL}Please check the path of the data: {original_path} {bc.ENDC}")
+            print(f"{bc.FAIL}Please check the path of the data: {pts_folder} {bc.ENDC}")
             return
 
     print(f"pcd_files from folder: {pts_folder}")
