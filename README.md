@@ -101,11 +101,9 @@ This benchmark implementation is based on codes from several repositories as we 
 
 This work was partially supported by the Wallenberg AI, Autonomous Systems and Software Program ([WASP](https://wasp-sweden.org/)) funded by the Knut and Alice Wallenberg Foundation
 
-### Cite Our Paper
+### Cite Our Papers
 
-Please cite our work if you find these useful for your research.
-
-Benchmark:
+Please cite our works if you find these useful for your research:
 
 ```
 @inproceedings{zhang2023benchmark,
