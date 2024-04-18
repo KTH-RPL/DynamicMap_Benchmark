@@ -22,14 +22,18 @@ Here is a preview of the readme in codes. Task detects dynamic points in maps an
 **Quick** try:
 
 - Teaser data on KITTI sequence 00 only 384.8MB in [Zenodo online drive](https://zenodo.org/record/8160051)
+  ```bash
+  wget https://zenodo.org/records/8160051/files/00.zip
+  unzip 00.zip -d ${data_path, e.g. /home/kin/data}
+  ```
 - Clone our repo:
   ```bash
   git clone --recurse-submodules https://github.com/KTH-RPL/DynamicMap_Benchmark.git
   ```
 - Go to methods folder, build and run through 
   ```bash
-  cd methods/octomap && cmake -B build && cmake --build build
-  ./build/octomap_run ${data_path, e.g. /home/kin/data/00} ${assets/config_fg.yaml} -1 
+  cd methods/dufomap && cmake -B build -D CMAKE_CXX_COMPILER=g++-10 && cmake --build build
+  ./build/dufomap_run ${data_path, e.g. /home/kin/data/00} ${assets/config.toml}
   ```
 
 ### News: 
@@ -51,7 +55,7 @@ Feel free to pull a request if you want to add more methods or datasets. Welcome
 Please check in [`methods`](methods) folder.
 
 Online (w/o prior map):
-- [x] DUFOMap (Ours 🚀): [RAL'24](https://arxiv.org/abs/2403.01449), [**Benchmark Instruction**](https://github.com/Kin-Zhang/dufomap)
+- [x] DUFOMap (Ours 🚀): [RAL'24](https://arxiv.org/abs/2403.01449), [**Benchmark Instruction**](https://github.com/KTH-RPL/dufomap)
 - [x] Octomap w GF (Ours 🚀): [ITSC'23](https://arxiv.org/abs/2307.07260), [**Benchmark improvement ITSC 2023**](https://github.com/Kin-Zhang/octomap/tree/feat/benchmark)
 - [x] dynablox: [RAL'23 official link](https://github.com/ethz-asl/dynablox), [**Benchmark Adaptation**](https://github.com/Kin-Zhang/dynablox/tree/feature/benchmark) 
 - [x] Octomap: [ICRA'10 & AR'13 official link](https://github.com/OctoMap/octomap_mapping), [**Benchmark implementation**](https://github.com/Kin-Zhang/octomap/tree/feat/benchmark)
