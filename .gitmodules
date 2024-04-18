@@ -10,3 +10,9 @@
 [submodule "methods/DeFlow"]
 	path = methods/DeFlow
 	url = git@github.com:KTH-RPL/DeFlow.git
+[submodule "methods/dynablox"]
+	path = methods/dynablox
+	url = https://github.com/Kin-Zhang/dynablox.git
+[submodule "methods/dufomap"]
+	path = methods/dufomap
+	url = https://github.com/Kin-Zhang/dufomap

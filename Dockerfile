@@ -12,7 +12,7 @@ RUN git clone https://github.com/jbeder/yaml-cpp.git && \
     cd yaml-cpp && env CFLAGS='-fPIC' CXXFLAGS='-fPIC' cmake -Bbuild && \
     cmake --build build --config Release --target install
 
-RUN apt update && apt install -y libpcl-dev libopencv-dev
+RUN apt update && apt install -y libpcl-dev libopencv-dev gcc-10 g++-10 libtbb-dev liblz4-dev
 
 # since we will output pcd file, don't want to root to lock it. normally 1000 is the first user in our desktop also
 RUN useradd -ms /bin/bash -u 1000 kin
