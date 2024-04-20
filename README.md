@@ -21,9 +21,9 @@ Here is a preview of the readme in codes. Task detects dynamic points in maps an
 
 **Quick** try:
 
-- Teaser data on KITTI sequence 00 only 384.8MB in [Zenodo online drive](https://zenodo.org/record/8160051)
+- Teaser data on KITTI sequence 00 only 384.8MB in [Zenodo online drive](https://zenodo.org/record/10886629)
   ```bash
-  wget https://zenodo.org/records/8160051/files/00.zip
+  wget https://zenodo.org/records/10886629/files/00.zip
   unzip 00.zip -d ${data_path, e.g. /home/kin/data}
   ```
 - Clone our repo:
@@ -77,7 +77,7 @@ Last but not least, feel free to pull request if you want to add more methods. W
 
 ## Dataset & Scripts
 
-Download all these dataset from [Zenodo online drive](https://zenodo.org/records/10886629). Or create by yourself through the [scripts we provided](scripts/README.md).
+Download PCD files mentioned in paper from [Zenodo online drive](https://zenodo.org/records/10886629). Or create unified format by yourself through the [scripts we provided](scripts/README.md) for more open-data or your own dataset. Please follow the LICENSE of each dataset before using it.
 
 - [x] [Semantic-Kitti, outdoor small town](https://semantic-kitti.org/dataset.html) VLP-64
 - [x] [Argoverse2.0, outdoor US cities](https://www.argoverse.org/av2.html#lidar-link) VLP-32
@@ -120,11 +120,14 @@ Please cite our works if you find these useful for your research:
   pages={608-614},
   doi={10.1109/ITSC57777.2023.10422094}
 }
-
 @article{daniel2024dufomap,
-    author    = {Daniel, Duberg and Zhang, Qingwen and Jia, Mingkai and Jensfelt, Patric},
-    title     = {DUFOMap: Efficient Dynamic Awareness Mapping},
-    journal   = {arXiv preprint arXiv:2403.01449},
-    year      = {2024},
+  author={Duberg, Daniel and Zhang, Qingwen and Jia, Mingkai and Jensfelt, Patric},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={{DUFOMap}: Efficient Dynamic Awareness Mapping}, 
+  year={2024},
+  volume={9},
+  number={6},
+  pages={5038-5045},
+  doi={10.1109/LRA.2024.3387658}
 }
 ```
