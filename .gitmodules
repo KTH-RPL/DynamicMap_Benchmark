@@ -16,3 +16,6 @@
 [submodule "methods/dufomap"]
 	path = methods/dufomap
 	url = https://github.com/Kin-Zhang/dufomap
+[submodule "methods/BeautyMap"]
+	path = methods/BeautyMap
+	url = https://github.com/MKJia/BeautyMap
