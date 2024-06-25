@@ -147,4 +147,5 @@ nav:
     - Data: data.md
     - Method: method.md
     - Evaluation: evaluation.md
-    - Demo: demo.md
+    # - A Demo: demo.md
+    - Project Lists: papers.md
