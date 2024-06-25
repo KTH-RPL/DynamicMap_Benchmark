@@ -6,6 +6,7 @@ A Dynamic Points Removal Benchmark in Point Cloud Maps
 [![video](https://img.shields.io/badge/中文-Bilibili-74b9ff?logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1bC4y1R7h3)
 [![video](https://img.shields.io/badge/video-YouTube-FF0000?logo=youtube&logoColor=white)](https://youtu.be/pCHsNKXDJQM?si=nhbAnPrbaZJEqbjx)
 [![poster](https://img.shields.io/badge/Poster-6495ed?style=flat&logo=Shotcut&logoColor=wihte)](https://hkustconnect-my.sharepoint.com/:b:/g/personal/qzhangcb_connect_ust_hk/EQvNHf9JNEtNpyPg1kkNLNABk0v1TgGyaM_OyCEVuID4RQ?e=TdWzAq)
+[![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?logo=MaterialForMkDocs&logoColor=white)](https://kth-rpl.github.io/DynamicMap_Benchmark/)
     
 Here is a preview of the readme in codes. Task detects dynamic points in maps and removes them, enhancing the maps:
 
@@ -45,9 +46,9 @@ Feel free to pull a request if you want to add more methods or datasets. Welcome
 - **2024/03/08** **Fix statements** on our ITSC'23 paper: KITTI sequences pose are also from SemanticKITTI which used SuMa. In the DUFOMap paper Section V-C, Table III, we present the dynamic removal result on different pose sources. Check discussion in [DUFOMap](https://arxiv.org/abs/2403.01449) paper if you are interested.
 - **2023/06/13** The [benchmark paper](https://arxiv.org/abs/2307.07260) Accepted by ITSC 2023 and release five methods (Octomap, Octomap w GF, ERASOR, Removert) and three datasets (01, 05, av2, semindoor) in [benchmark paper](https://arxiv.org/abs/2307.07260).
 
----
+<!-- --- -->
 
-- [ ] 2024/04/19: I will update a document page soon (tutorial, manual book, and new online leaderboard), and point out the commit for each paper. Since there are some minor mistakes in the first version. Stay tune with us!
+<!-- - [ ] 2024/04/19: I will update a document page soon (tutorial, manual book, and new online leaderboard), and point out the commit for each paper. Since there are some minor mistakes in the first version. Stay tune with us! -->
 
 
 ## Methods:
