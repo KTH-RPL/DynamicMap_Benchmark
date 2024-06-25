@@ -4,6 +4,7 @@ site_author: Qingwen Zhang
 # Repository
 repo_name: KTH-RPL/DynamicMap_Benchmark
 repo_url: https://github.com/KTH-RPL/DynamicMap_Benchmark
+edit_uri: ./edit/mkdocs/docs
 
 # Copyright
 copyright: Copyright &copy; 2023 KTH RPL Qingwen Zhang
