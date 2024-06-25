@@ -1,0 +1,5 @@
+
+tqdm
+numpy
+fire
+open3d
