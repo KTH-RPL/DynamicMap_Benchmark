@@ -1,0 +1,25 @@
+name: ci 
+on:
+  push:
+    branches:
+      - mkdocs
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - uses: actions/cache@v2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+      - run: pip install mkdocs-material 
+      - run: pip install mkdocs-minify-plugin mkdocs-video mkdocs-git-committers-plugin mkdocs-git-revision-date-localized-plugin # mkdocs-git-revision-date-plugin # mkdocs-git-revision-date-localized-plugin mkdocs-git-authors-plugin 
+      - run: mkdocs gh-deploy --force
