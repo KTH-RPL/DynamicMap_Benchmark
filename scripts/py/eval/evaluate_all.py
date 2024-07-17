@@ -21,7 +21,7 @@ from utils import cnt_staticAdynamic, check_file_exists, bc
 
 # TODO: Change the parameters below to your own settings ====>>
 Result_Folder = "/home/kin/data/Dynamic_Papers_assets/BenchmarkPaper"
-algorithms = ["removert", "erasor", "octomap", "octomapg", "octomapfg"]
+algorithms = ["octomap", "octomapg", "octomapfg", "beautymap", "dufomap"]
 all_seqs = ["00", "05", "av2", "semindoor"]
 # TODO: Change the parameters below to your own settings <<===
 
