@@ -73,12 +73,24 @@ int main(int argc, char** argv) {
         // if the nearest point in et_cloud for gt is too far, then this gt point is not in the et_cloud
         // which means mark as dynamic since et_cloud remove this one.
         if (kdtree.nearestKSearch(point, 1, nearest_indices, nearest_distances) > 0) {
-            float distance = std::sqrt(nearest_distances[0]);
-            if (distance > min_dis_cnt_as_same) {
-                point.intensity = 1;
-            } else {
+            // Revised Code
+            auto point_et = et_cloud->points[nearest_indices[0]];
+            auto left_bottom_corner = point_et.getArray3fMap() - Eigen::Array3f(min_dis_cnt_as_same, min_dis_cnt_as_same, min_dis_cnt_as_same);
+            auto right_top_corner = point_et.getArray3fMap() + Eigen::Array3f(min_dis_cnt_as_same, min_dis_cnt_as_same, min_dis_cnt_as_same);
+            // Check if the gt point is in the bounding box of the et point
+            if ((point.getArray3fMap() >= left_bottom_corner).all() && (point.getArray3fMap() <= right_top_corner).all()) {
                 point.intensity = 0;
+            } else {
+                point.intensity = 1;
             }
+
+            // Original Code
+            // float distance = std::sqrt(nearest_distances[0]);
+            // if (distance > min_dis_cnt_as_same) {
+            //     point.intensity = 1;
+            // } else {
+            //     point.intensity = 0;
+            // }
         } else {
             std::cout << "Search failed" << std::endl;
         }
