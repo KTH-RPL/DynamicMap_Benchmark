@@ -75,10 +75,19 @@ int main(int argc, char** argv) {
         if (kdtree.nearestKSearch(point, 1, nearest_indices, nearest_distances) > 0) {
             // Revised Code
             auto point_et = et_cloud->points[nearest_indices[0]];
-            auto left_bottom_corner = point_et.getArray3fMap() - Eigen::Array3f(min_dis_cnt_as_same, min_dis_cnt_as_same, min_dis_cnt_as_same);
-            auto right_top_corner = point_et.getArray3fMap() + Eigen::Array3f(min_dis_cnt_as_same, min_dis_cnt_as_same, min_dis_cnt_as_same);
-            // Check if the gt point is in the bounding box of the et point
-            if ((point.getArray3fMap() >= left_bottom_corner).all() && (point.getArray3fMap() <= right_top_corner).all()) {
+            pcl::PointXYZI left_bottom_corner = point_et;
+            left_bottom_corner.x -= min_dis_cnt_as_same;
+            left_bottom_corner.y -= min_dis_cnt_as_same;
+            left_bottom_corner.z -= min_dis_cnt_as_same;
+
+            pcl::PointXYZI right_top_corner = point_et;
+            right_top_corner.x += min_dis_cnt_as_same;
+            right_top_corner.y += min_dis_cnt_as_same;
+            right_top_corner.z += min_dis_cnt_as_same;
+
+            if ((point.x >= left_bottom_corner.x && point.x <= right_top_corner.x) &&
+                (point.y >= left_bottom_corner.y && point.y <= right_top_corner.y) &&
+                (point.z >= left_bottom_corner.z && point.z <= right_top_corner.z)) {
                 point.intensity = 0;
             } else {
                 point.intensity = 1;
