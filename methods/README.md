@@ -1,6 +1,8 @@
 Methods in Benchmark
 ---
 
+Please visit 📓[our wiki page](https://kth-rpl.github.io/DynamicMap_Benchmark/) for detailed tutorials and the latest updates documentation.
+
 Demo Image, results you can have after reading this README:
 
 <img src="../assets/imgs/octomap_gf_00.png" style="width: 70%;" alt="Octomap Image">
