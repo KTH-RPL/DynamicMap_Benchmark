@@ -1,12 +1,15 @@
 /**
- * Copyright (C) 2022-now, RPL, KTH Royal Institute of Technology
- * MIT License
- * @author: Kin ZHANG (https://kin-zhang.github.io/)
  * @date: 2023-04-12 18:14
- * @details: TODO
+ * @author: Qingwen Zhang(https://kin-zhang.github.io/)
+ * Copyright (C) 2023-now, RPL, KTH Royal Institute of Technology
  * 
- * Input: Algorithm Result PCD file, and GT PC file
- * Output: raw map pcd file with label 0/1
+ * @details: 
+ *  Input: Algorithm Result PCD file, and GT PC file
+ *  Output: point-level map pcd file with label 0/1
+ * 
+ * This file is part of DynamicMap_Benchmark (https://github.com/KTH-RPL/DynamicMap_Benchmark).
+ * If you find this repo helpful, please cite the respective publication as 
+ * listed on the above website.
  */
 
 #include <pcl/io/pcd_io.h>

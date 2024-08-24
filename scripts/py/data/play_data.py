@@ -1,3 +1,15 @@
+'''
+# @date: 2024-07-25 17:29
+# @author: Qingwen Zhang (https://kin-zhang.github.io/)
+# Copyright (C) 2023-now, RPL, KTH Royal Institute of Technology
+# 
+# @detail: Play data with interactive viewer.
+# 
+# This file is part of DynamicMap_Benchmark (https://github.com/KTH-RPL/DynamicMap_Benchmark).
+# If you find this repo helpful, please cite the respective publication as 
+# listed on the above website.
+'''
+
 import sys, os
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..' ))
 sys.path.append(BASE_DIR)
@@ -53,15 +65,15 @@ class DynamicMapData:
         return res_dict
 
 def vis(
-    data_dir: str = "/home/kin/data/Dynamic_Papers_assets/Benchmark_data/00",
+    data_dir: str = "/home/kin/DATA_HDD/Dynamic_Papers_assets/Benchmark_data/00",
     view_file: str = os.path.abspath(BASE_DIR+"/../../assets/view/default.json"),
-    point_size: int = 2,
+    point_size: int = 3,
     speed: int = 1,
     ):
     o3d_vis = MyVisualizer(view_file=view_file, window_title="DynamicMap Benchmark Data Preview")
     opt = o3d_vis.vis.get_render_option()
     # opt.background_color = np.asarray([216, 216, 216]) / 255.0
-    opt.background_color = np.asarray([80/255, 90/255, 110/255])
+    # opt.background_color = np.asarray([80/255, 90/255, 110/255])
     # opt.background_color = np.asarray([1, 1, 1])
     opt.point_size = point_size
     dataset = DynamicMapData(data_dir)
@@ -72,6 +84,7 @@ def vis(
 
         pcd = o3d.geometry.PointCloud()
         pcd.points = o3d.utility.Vector3dVector(data['pc'][:, :3])
+        # print(data['pc'].shape)
         o3d_vis.update([pcd, o3d.geometry.TriangleMesh.create_coordinate_frame(size=1)])
         time.sleep(0.05*1/speed)
 

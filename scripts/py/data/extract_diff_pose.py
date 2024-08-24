@@ -1,16 +1,16 @@
 '''
-# Created: 2024-01-22 17:35
-# Copyright (C) 2024-now, RPL, KTH Royal Institute of Technology
-# Author: Qingwen ZHANG  (https://kin-zhang.github.io/)
-#
-# If you find this repo helpful, please cite the respective publication in DynamicBenchmark.
-# This script is licensed under the terms of the MIT license.
-# For a copy, see <https://opensource.org/licenses/MIT>.
+# @date: 2024-01-22 17:35
+# @author: Qingwen Zhang (https://kin-zhang.github.io/)
+# Copyright (C) 2023-now, RPL, KTH Royal Institute of Technology
 # 
-# Description: extract different poses result:
+# @detail: Extract different poses result:
 # 1. from the SemanticKITTI (with SuMa more detail: https://github.com/PRBonn/semantic-kitti-api/issues/140
 # 2. from the kiss-icp result (with kiss-icp more detail: https://github.com/PRBonn/kiss-icp/issues/267
 # 3. from the KITTI odometry dataset (with KITTI more detail: https://www.cvlibs.net/datasets/kitti/eval_odometry.php
+# 
+# This file is part of DynamicMap_Benchmark (https://github.com/KTH-RPL/DynamicMap_Benchmark).
+# If you find this repo helpful, please cite the respective publication as 
+# listed on the above website.
 '''
 
 

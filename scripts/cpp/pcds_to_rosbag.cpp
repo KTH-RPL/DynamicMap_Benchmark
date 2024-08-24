@@ -1,14 +1,17 @@
 /**
- * Copyright (C) 2023-now, RPL, KTH Royal Institute of Technology
- * MIT License
- * @author: Kin ZHANG (https://kin-zhang.github.io/)
  * @date: 2023-12-16 22:20
- * @details: Translate our pcds to rosbag
+ * @author: Qingwen Zhang(https://kin-zhang.github.io/)
+ * Copyright (C) 2023-now, RPL, KTH Royal Institute of Technology
  * 
- * Input: DynamicMap Benchmark Dataset format, check our repo: https://github.com/KTH-RPL/DynamicMap_Benchmark
- * Output: a rosbag file with PointCloud2 messages [already transformed to world frame.] and Odometry messages
+ * @details: Translate our pcds to rosbag
+ *  Input: DynamicMap Benchmark Dataset format, check our repo: https://github.com/KTH-RPL/DynamicMap_Benchmark
+ *  Output: a rosbag file with PointCloud2 messages [already transformed to world frame.] and Odometry messages
  * 
  * Example run: ./build/pcds_to_rosbag /home/kin/bags/231209/clean_pcd /home/kin/test/mybag.bag
+ *
+ * This file is part of DynamicMap_Benchmark (https://github.com/KTH-RPL/DynamicMap_Benchmark).
+ * If you find this repo helpful, please cite the respective publication as 
+ * listed on the above website.
  */
 
 #include <iostream>

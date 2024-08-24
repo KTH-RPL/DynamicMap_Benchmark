@@ -1,8 +1,7 @@
 '''
-# Created: 2023-3-22 21:13
-# Copyright (C) 2022-now, RPL, KTH Royal Institute of Technology
-# Author: Kin ZHANG  (https://kin-zhang.github.io/)
-
+# @date: 2023-3-22 21:13
+# @author: Qingwen Zhang (https://kin-zhang.github.io/)
+# 
 # Most of the code is from semantic-kitti-api
 # check their official repo: https://github.com/PRBonn/semantic-kitti-api
 '''

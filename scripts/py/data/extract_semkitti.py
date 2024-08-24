@@ -1,11 +1,14 @@
 '''
-# @created: 2023-04-04 21:44
+# @date: 2023-04-04 21:44
 # @updated: 2024-03-27 10:12
 # @author: Qingwen Zhang  (https://kin-zhang.github.io/)
-# 
 # Copyright (C) 2023-now, RPL, KTH Royal Institute of Technology
-# If you find this repo helpful, please cite the respective publication in DynamicBenchmark.
 # 
+# @detail: Extract data from SemanticKITTI to benchmark format.
+# 
+# This file is part of DynamicMap_Benchmark (https://github.com/KTH-RPL/DynamicMap_Benchmark).
+# If you find this repo helpful, please cite the respective publication as 
+# listed on the above website.
 '''
 
 import sys, os

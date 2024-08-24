@@ -1,12 +1,17 @@
 /**
- * Copyright (C) 2022-now, RPL, KTH Royal Institute of Technology
- * MIT License
- * Author: Kin ZHANG (https://kin-zhang.github.io/)
- * Date: 2023-03-28 21:10
- * Description: extract the ground truth kitti dataset
- *              set intensity to 0 for static
- *              set intensity to 1 for dynamic
+ * @date: 2023-03-28 21:10
+ * @author: Qingwen Zhang(https://kin-zhang.github.io/)
+ * Copyright (C) 2023-now, RPL, KTH Royal Institute of Technology
+ * 
+ * @details: extract the *downsampled* ground truth map in kitti dataset
+ *  set intensity to 0 for static
+ *  set intensity to 1 for dynamic
+ * 
+ * This file is part of DynamicMap_Benchmark (https://github.com/KTH-RPL/DynamicMap_Benchmark).
+ * If you find this repo helpful, please cite the respective publication as 
+ * listed on the above website.
  */
+
 
 #include <iostream>
 #include <string>

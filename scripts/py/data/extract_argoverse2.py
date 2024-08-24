@@ -1,13 +1,18 @@
 
-# Created: 2023-04-17 18:05
-# @Copyright (C) 2023-now, RPL, KTH Royal Institute of Technology
-# @Author: Kin ZHANG  (https://kin-zhang.github.io/)
-# @Detail: This script is used to extract the point cloud data from AV2 dataset.
-# Check more argoverse dataset here: https://www.argoverse.org/av2.html#lidar-link
+"""
+# @date: 2023-04-17 18:05
+# @author: Qingwen Zhang (https://kin-zhang.github.io/)
+# Copyright (C) 2023-now, RPL, KTH Royal Institute of Technology
 # 
-# If you find this repo helpful, please cite the respective publication in DynamicBenchmark.
-# This script is licensed under the terms of the MIT license.
-# For a copy, see <https://opensource.org/licenses/MIT>.
+# @detail: Extract the point cloud data from AV2 dataset.
+# Check more Argoverse dataset here: https://www.argoverse.org/av2.html#lidar-link
+# 
+# This file is part of DynamicMap_Benchmark (https://github.com/KTH-RPL/DynamicMap_Benchmark).
+# If you find this repo helpful, please cite the respective publication as 
+# listed on the above website.
+"""
+
+
 
 
 import numpy as np

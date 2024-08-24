@@ -1,14 +1,15 @@
 '''
-# Created: 2023-04-12 15:37
+# @date: 2023-04-12 15:37
+# @author: Qingwen Zhang  (https://kin-zhang.github.io/)
 # Copyright (C) 2023-now, RPL, KTH Royal Institute of Technology
-# Author: Kin ZHANG  (https://kin-zhang.github.io/)
-# Part of Dynamic Benchmark. Running in Python3.
-# Version: 1.0.0 (2023-04-12) Only read.
+# 
+# @detail: PCD file read and write in Python.
+# 
+# Version: 2.1.0 (2024-08-23) Add read & write with rgb involved.
 # Version: 2.0.0 (2023-05-21) Add write with intensity involved.
-
-
-# This code is licensed under the terms of the MIT license.
-# For a copy, see <https://opensource.org/licenses/MIT>.
+# Version: 1.0.0 (2023-04-12) Only read.
+# 
+# 
 # ---------------------------------------------------------------
 # First version: Read and write PCL .pcd files in python.
 # dimatura@cmu.edu, 2013-2018 Check https://github.com/dimatura/pypcd
@@ -85,7 +86,8 @@ class PointCloud(object):
         self.metadata_keys = metadata.keys()
         self.__dict__.update(metadata)
         self.pc_data = pc_data
-
+        self.xyzi2np()
+        
     def get_metadata(self):
         """ returns copy of metadata """
         metadata = {}
@@ -100,6 +102,18 @@ class PointCloud(object):
         if 'intensity' in self.pc_data.dtype.names:
             i = np.reshape(self.pc_data['intensity'], (-1, 1))
             self.np_data = np.concatenate((x, y, z, i), axis=1)
+        elif 'rgb' in self.pc_data.dtype.names:
+            # Reinterpret the 'rgb' float data as 32-bit unsigned integers
+            rgb_floats_as_ints = self.pc_data['rgb'].view(np.uint32)
+            
+            # Now, perform the bitwise operations to extract the RGB components
+            rgb = np.zeros((self.pc_data.shape[0], 3), dtype=np.uint8)
+            rgb[:, 0] = (rgb_floats_as_ints >> 16) & 0x0000ff  # Red channel
+            rgb[:, 1] = (rgb_floats_as_ints >> 8) & 0x0000ff   # Green channel
+            rgb[:, 2] = rgb_floats_as_ints & 0x0000ff          # Blue channel
+            
+            self.np_data = np.concatenate((x, y, z, rgb), axis=1)
+
         else:
             self.np_data = np.concatenate((x, y, z), axis=1)
 
@@ -278,20 +292,3 @@ def build_ascii_fmtstr(pc):
         else:
             raise ValueError("don't know about type %s" % t)
     return fmtstr
-
-
-# Other functions --------------------------------------------------------
-try:
-    from scipy.spatial.transform import Rotation as R
-except ImportError:
-    warnings.warn("scipy not found, some functions may not work")
-
-def xyzqwxyz_to_matrix(xyzqwxyz: list):
-    """
-    input: xyzqwxyz: [x, y, z, qx, qy, qz, qw] a list of 7 elements
-    """
-    rotation = R.from_quat([xyzqwxyz[4], xyzqwxyz[5], xyzqwxyz[6], xyzqwxyz[3]]).as_matrix()
-    pose = np.eye(4).astype(np.float64)
-    pose[:3, :3] = rotation
-    pose[:3, 3] = xyzqwxyz[:3]
-    return pose

@@ -1,12 +1,14 @@
 
 '''
-# Created: 2023-04-16 18:03
-# @Copyright (C) 2023-now, RPL, KTH Royal Institute of Technology
-# @Author: Kin ZHANG  (https://kin-zhang.github.io/)
-
-# If you find this repo helpful, please cite the respective publication in DynamicBenchmark.
-# This script is licensed under the terms of the MIT license.
-# For a copy, see <https://opensource.org/licenses/MIT>.
+# @date: 2023-04-16 18:03
+# @author: Qingwen Zhang (https://kin-zhang.github.io/)
+# Copyright (C) 2023-now, RPL, KTH Royal Institute of Technology
+# 
+# @detail: Evaluate result and print score
+# 
+# This file is part of DynamicMap_Benchmark (https://github.com/KTH-RPL/DynamicMap_Benchmark).
+# If you find this repo helpful, please cite the respective publication as 
+# listed on the above website.
 '''
 
 import numpy as np
