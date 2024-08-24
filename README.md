@@ -28,7 +28,7 @@ Here is a preview of the readme in codes. Task detects dynamic points in maps an
   wget https://zenodo.org/records/10886629/files/00.zip
   unzip 00.zip -d ${data_path, e.g. /home/kin/data}
   ```
-- Clone our repo:
+- Clone our repo (if it's slow to clone all, check our github page and select one of methods and go to the next step)
   ```bash
   git clone --recurse-submodules https://github.com/KTH-RPL/DynamicMap_Benchmark.git
   ```
@@ -38,18 +38,18 @@ Here is a preview of the readme in codes. Task detects dynamic points in maps an
   ./build/dufomap_run ${data_path, e.g. /home/kin/data/00} ${assets/config.toml}
   ```
 
+📓 Visit [our wiki page](https://kth-rpl.github.io/DynamicMap_Benchmark/) for detailed tutorials and updates.
+
 ### News: 
 
-Feel free to pull a request if you want to add more methods or datasets. Welcome! We will try our best to update methods and datasets in this benchmark. Please give us a star 🌟 and cite our work 📖 if you find this useful for your research. Thanks!
+Feel free to pull a request if you want to add more methods or datasets. Welcome! We will try our best to update methods and datasets in this benchmark. 
+Please give us a star 🌟 and cite our work 📖 if you find this useful for your research. Thanks!
 
+- **2024/08/24** We have [wiki page](https://kth-rpl.github.io/DynamicMap_Benchmark/) now! It mainly explains benchmark codes and data format from scratch in more detail. Additionally, it includes how to automatically output tables, pictures, and videos in our papers.
 - **2024/04/29** [BeautyMap](https://arxiv.org/abs/2405.07283) is accepted by RA-L'24. Updated benchmark: BeautyMap and DeFlow submodule instruction in the benchmark. Added the first data-driven method [DeFlow](https://github.com/KTH-RPL/DeFlow/tree/feature/dynamicmap) into our benchmark. Feel free to check. And [a discussion](https://github.com/KTH-RPL/DynamicMap_Benchmark/discussions/15) for why metric different than previous works.
 - **2024/04/18** [DUFOMap](https://arxiv.org/abs/2403.01449) is accepted by RA-L'24. Updated benchmark: DUFOMap and dynablox submodule instruction in the benchmark. Two datasets w/o gt for demo are added in the download link. Feel free to check.
 - **2024/03/08** **Fix statements** on our ITSC'23 paper: KITTI sequences pose are also from SemanticKITTI which used SuMa. In the DUFOMap paper Section V-C, Table III, we present the dynamic removal result on different pose sources. Check discussion in [DUFOMap](https://arxiv.org/abs/2403.01449) paper if you are interested.
 - **2023/06/13** The [benchmark paper](https://arxiv.org/abs/2307.07260) Accepted by ITSC 2023 and release five methods (Octomap, Octomap w GF, ERASOR, Removert) and three datasets (01, 05, av2, semindoor) in [benchmark paper](https://arxiv.org/abs/2307.07260).
-
-<!-- --- -->
-
-<!-- - [ ] 2024/04/19: I will update a document page soon (tutorial, manual book, and new online leaderboard), and point out the commit for each paper. Since there are some minor mistakes in the first version. Stay tune with us! -->
 
 
 ## Methods:
@@ -86,8 +86,6 @@ Download PCD files mentioned in paper from [Zenodo online drive](https://zenodo.
 - [x] [UDI-Plane] Our own dataset, Collected by VLP-16 in a small vehicle.
 - [x] [KTH-Campuse] Our [Multi-Campus Dataset](https://mcdviral.github.io/), Collected by [Leica RTC360 3D Laser Scan](https://leica-geosystems.com/products/laser-scanners/scanners/leica-rtc360). Only 18 frames included to download for demo, please check [the official website](https://mcdviral.github.io/) for more.
 - [x] [Indoor-Floor] Our own dataset, Collected by Livox mid-360 in a quadruped robot.
-<!-- - [ ] [HKUST-Building] Our [fusionportable Dataset](https://fusionportable.github.io/dataset/fusionportable/), collected by [Leica BLK360 Imaging Laser Scanner](https://leica-geosystems.com/products/laser-scanners/scanners/blk360) -->
-<!-- - [ ] [KTH-Indoor] Our own dataset, Collected by VLP-16/Mid-70 in kobuki. -->
 
 Welcome to contribute your dataset with ground truth to the community through pull request.
 
