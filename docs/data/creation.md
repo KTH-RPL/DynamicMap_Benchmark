@@ -1,73 +1,13 @@
-# Data
+# Data Creation
 
-In this section, we will introduce the data format we use in the benchmark, and how to prepare the data (public datasets or collected by ourselves) for the benchmark.
-
-## Format
-
-We saved all our data into PCD files, first let me introduce the [PCD file format](https://pointclouds.org/documentation/tutorials/pcd_file_format.html):
-
-The important two for us are `VIEWPOINT`, `POINTS` and `DATA`:
-
-- **VIEWPOINT** - specifies an acquisition viewpoint for the points in the dataset. This could potentially be later on used for building transforms between different coordinate systems, or for aiding with features such as surface normals, that need a consistent orientation.
-
-    The viewpoint information is specified as a translation (tx ty tz) + quaternion (qw qx qy qz). The default value is:
-
-    ```bash
-    VIEWPOINT 0 0 0 1 0 0 0
-    ```
-
-- **POINTS** - specifies the number of points in the dataset.
-
-- **DATA** - specifies the data type that the point cloud data is stored in. As of version 0.7, three data types are supported: ascii, binary, and binary_compressed. We saved as binary for faster reading and writing.
-
-### Example
-
-```
-# .PCD v0.7 - Point Cloud Data file format
-VERSION 0.7
-FIELDS x y z intensity
-SIZE 4 4 4 4
-TYPE F F F F
-COUNT 1 1 1 1
-WIDTH 125883
-HEIGHT 1
-VIEWPOINT -15.6504 17.981 -0.934952 0.882959 -0.0239536 -0.0058903 -0.468802
-POINTS 125883
-DATA binary
-```
-
-In this `004390.pcd` we have 125883 points, and the pose (sensor center) of this frame is: `-15.6504 17.981 -0.934952 0.882959 -0.0239536 -0.0058903 -0.468802`. All points are already transformed to the world frame.
-
-## Download benchmark data
-
-We already processed the data in the benchmark, you can download the data from the [following links](https://zenodo.org/records/10886629):
-
-
-| Dataset | Description | Sensor Type | Total Frame Number | Size |
-| --- | --- | --- | --- | --- |
-| KITTI sequence 00 | in a small town with few dynamics (including one pedestrian around) | VLP-64 | 141 | 384.8 MB |
-| KITTI sequence 05 | in a small town straight way, one higher car, the benchmarking paper cover image from this sequence. | VLP-64 | 321 | 864.0 MB |
-| Argoverse2 | in a big city, crowded and tall buildings (including cyclists, vehicles, people walking near the building etc. | 2 x VLP-32 | 575 | 1.3 GB |
-| KTH campus (no gt) | Collected by us (Thien-Minh) on the KTH campus. Lots of people move around on the campus. | Leica RTC360 | 18 | 256.4 MB |
-| Semi-indoor | Collected by us, running on a small 1x2 vehicle with two people walking around the platform. | VLP-16 | 960 | 620.8 MB |
-| Twofloor (no gt) | Collected by us (Bowen Yang) in a quadruped robot. A two-floor structure environment with one pedestrian around. | Livox-mid 360 | 3305 | 725.1 MB |
-
-Download command:
-```bash
-wget https://zenodo.org/api/records/10886629/files-archive.zip
-
-# or download each sequence separately
-wget https://zenodo.org/records/10886629/files/00.zip
-wget https://zenodo.org/records/10886629/files/05.zip
-wget https://zenodo.org/records/10886629/files/av2.zip
-wget https://zenodo.org/records/10886629/files/kthcampus.zip
-wget https://zenodo.org/records/10886629/files/semindoor.zip
-wget https://zenodo.org/records/10886629/files/twofloor.zip
-```
+In this section, we demonstrate how to extract expected format data from public datasets (KITTI, Argoverse 2) and also collected by ourselves (rosbag). 
+<!-- I will add soo -->
+Still, I recommend you to download the benchmark data directly from the [Zenodo](https://zenodo.org/records/10886629) link without reading this section. Back to [data download and visualize](index.md#download-benchmark-data) page.
+It's only needed for people who want to **run more data from themselves**.
 
 ## Create by yourself
 
-If you want to process more data, you can follow the instructions below. (
+If you want to process more data, you can follow the instructions below. 
     
 !!! Note
     Feel free to skip this section if you only want to use the benchmark data.    

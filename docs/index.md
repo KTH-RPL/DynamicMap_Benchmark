@@ -2,12 +2,15 @@
 
 **Welcome to the Dynamic Map Benchmark Wiki Page!**
 
-You can always press `F` or top right search bar to search for specific topics.
+You can always press `F` or top right search bar to search for specific topics. 
+
+Please give us [a star](https://github.com/KTH-RPL/DynamicMap_Benchmark)🌟 and [cite our work](#cite-our-papers)📖 to support our work if you find this useful.
 
 <details markdown>
   <summary>CHANGELOG:</summary>
 
-- 2024/06/25: Qingwen is starting to work on the wiki page.  
+- **2024/08/24**: Reorganize the wiki page. Add all scripts usage in the benchmark code, [Data Overview](data/index.md) with visualization, [Method Overview](method/index.md) with a demo to output clean map and [Evaluation](evaluation/index.md) to evaluate the performance of the methods and also automatically output the visualization in the paper.
+- 2024/06/25: [Qingwen](https://kin-zhang.github.io/) is starting to work on the wiki page.  
 - **2024/04/29** [BeautyMap](https://arxiv.org/abs/2405.07283) is accepted by RA-L'24. Updated benchmark: BeautyMap and DeFlow submodule instruction in the benchmark. Added the first data-driven method [DeFlow](https://github.com/KTH-RPL/DeFlow/tree/feature/dynamicmap) into our benchmark. Feel free to check.
 - **2024/04/18** [DUFOMap](https://arxiv.org/abs/2403.01449) is accepted by RA-L'24. Updated benchmark: DUFOMap and dynablox submodule instruction in the benchmark. Two datasets w/o gt for demo are added in the download link. Feel free to check.
 - 2024/03/08 **Fix statements** on our ITSC'23 paper: KITTI sequences pose are also from SemanticKITTI which used SuMa. In the DUFOMap paper Section V-C, Table III, we present the dynamic removal result on different pose sources. Check discussion in [DUFOMap](https://arxiv.org/abs/2403.01449) paper if you are interested.
@@ -30,15 +33,15 @@ These ghost points negatively affect downstream tasks and overall point cloud qu
 
 * What kind of data format we use? 
     
-    PCD files (pose information saved in `VIEWPOINT` header). Read [Data Section](data.md)
+    PCD files (pose information saved in `VIEWPOINT` header). Read [Data Section](data/index.md)
 
 * How to evaluate the performance of a method?
 
-    Two python scripts. Read [Evaluation Section](evaluation.md)
+    Two python scripts. Read [Evaluation Section](evaluation/index.md)
 
 * How to run a benchmark method on my data?
 
-    Format your data and run the method. Read [Create data](data.md/) and [Run method](Method.md)
+    Format your data and run the method. Read [Create data](data/creation.md) and [Run method](method/index.md)
 
 ## 🎁 Methods we included
 
@@ -87,16 +90,6 @@ Please cite our works if you find these useful for your research:
   pages={608-614},
   doi={10.1109/ITSC57777.2023.10422094}
 }
-@article{jia2024beautymap,
-  author={Jia, Mingkai and Zhang, Qingwen and Yang, Bowen and Wu, Jin and Liu, Ming and Jensfelt, Patric},
-  journal={IEEE Robotics and Automation Letters}, 
-  title={BeautyMap: Binary-Encoded Adaptable Ground Matrix for Dynamic Points Removal in Global Maps}, 
-  year={2024},
-  volume={},
-  number={},
-  pages={1-8},
-  doi={10.1109/LRA.2024.3402625}
-}
 @article{daniel2024dufomap,
   author={Duberg, Daniel and Zhang, Qingwen and Jia, Mingkai and Jensfelt, Patric},
   journal={IEEE Robotics and Automation Letters}, 
@@ -106,5 +99,15 @@ Please cite our works if you find these useful for your research:
   number={6},
   pages={5038-5045},
   doi={10.1109/LRA.2024.3387658}
+}
+@article{jia2024beautymap,
+  author={Jia, Mingkai and Zhang, Qingwen and Yang, Bowen and Wu, Jin and Liu, Ming and Jensfelt, Patric},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={{BeautyMap}: Binary-Encoded Adaptable Ground Matrix for Dynamic Points Removal in Global Maps}, 
+  year={2024},
+  volume={9},
+  number={7},
+  pages={6256-6263},
+  doi={10.1109/LRA.2024.3402625}
 }
 ```

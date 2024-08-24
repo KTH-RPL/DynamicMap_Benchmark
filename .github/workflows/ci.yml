@@ -21,5 +21,5 @@ jobs:
           key: ${{ github.ref }}
           path: .cache
       - run: pip install mkdocs-material 
-      - run: pip install mkdocs-minify-plugin mkdocs-video mkdocs-git-committers-plugin mkdocs-git-revision-date-localized-plugin # mkdocs-git-revision-date-plugin # mkdocs-git-revision-date-localized-plugin mkdocs-git-authors-plugin 
+      - run: pip install mkdocs-minify-plugin mkdocs-video mkdocs-git-committers-plugin-2 mkdocs-git-revision-date-localized-plugin # mkdocs-git-revision-date-plugin # mkdocs-git-revision-date-localized-plugin mkdocs-git-authors-plugin 
       - run: mkdocs gh-deploy --force

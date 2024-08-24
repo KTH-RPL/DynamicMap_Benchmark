@@ -7,7 +7,7 @@ repo_url: https://github.com/KTH-RPL/DynamicMap_Benchmark
 edit_uri: ./edit/mkdocs/docs
 
 # Copyright
-copyright: Copyright &copy; 2023 KTH RPL Qingwen Zhang
+copyright: Copyright &copy; 2023 - 2024 KTH RPL Qingwen Zhang
 
 # Configuration
 theme:
@@ -67,7 +67,7 @@ theme:
 plugins:
   - git-committers:
       repository: KTH-RPL/DynamicMap_Benchmark
-      branch: main
+      branch: mkdocs
   - search:
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
@@ -145,8 +145,12 @@ markdown_extensions:
 nav:
   - Getting started: 
     - Home: index.md
-    - Data: data.md
-    - Method: method.md
-    - Evaluation: evaluation.md
-    # - A Demo: demo.md
+    - Data: 
+      - Data Overview: data/index.md
+      - Data Creation: data/creation.md
+    - Method: 
+      - Overview: method/index.md
+      # - DUFOMap: method/dufomap.md
+    - Evaluation: 
+      - Overview: evaluation/index.md
     - Project Lists: papers.md
