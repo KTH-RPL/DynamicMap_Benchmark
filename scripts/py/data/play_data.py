@@ -68,8 +68,9 @@ def vis(
     data_dir: str = "/home/kin/DATA_HDD/Dynamic_Papers_assets/Benchmark_data/00",
     view_file: str = os.path.abspath(BASE_DIR+"/../../assets/view/default.json"),
     point_size: int = 3,
+    start_id: int = 0,
     speed: int = 1,
-    ):
+):
     o3d_vis = MyVisualizer(view_file=view_file, window_title="DynamicMap Benchmark Data Preview")
     opt = o3d_vis.vis.get_render_option()
     # opt.background_color = np.asarray([216, 216, 216]) / 255.0
@@ -77,7 +78,7 @@ def vis(
     # opt.background_color = np.asarray([1, 1, 1])
     opt.point_size = point_size
     dataset = DynamicMapData(data_dir)
-    for data_id in (pbar := tqdm(range(0, len(dataset)))):
+    for data_id in (pbar := tqdm(range(start_id, len(dataset)))):
         data = dataset[data_id]
         now_scene_id = data['scene_id']
         pbar.set_description(f"id: {data_id}, scene_id: {now_scene_id}, timestamp: {data['timestamp']}")
