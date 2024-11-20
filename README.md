@@ -32,10 +32,10 @@ Here is a preview of the readme in codes. Task detects dynamic points in maps an
   ```bash
   git clone --recurse-submodules https://github.com/KTH-RPL/DynamicMap_Benchmark.git
   ```
-- Go to methods folder, build and run through 
+- Go to methods folder, run through 
   ```bash
-  cd methods/dufomap && cmake -B build -D CMAKE_CXX_COMPILER=g++-10 && cmake --build build
-  ./build/dufomap_run ${data_path, e.g. /home/kin/data/00} ${assets/config.toml}
+  cd methods/dufomap && pip install dufomap
+  python main.py --data_dir ${data_path, e.g. /home/kin/data/00}
   ```
 
 📓 Visit [our wiki page](https://kth-rpl.github.io/DynamicMap_Benchmark/) for detailed tutorials and updates.
