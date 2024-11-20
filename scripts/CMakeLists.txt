@@ -17,6 +17,9 @@ if(NOT DEFINED CMAKE_SUPPRESS_DEVELOPER_WARNINGS)
      set(CMAKE_SUPPRESS_DEVELOPER_WARNINGS 1 CACHE INTERNAL "No dev warnings")
 endif()
 
+# in case sometime we need force to use system python3
+# set(PYTHON_EXECUTABLE /usr/bin/python3)
+
 find_package(Glog REQUIRED)
 find_package(gflags REQUIRED)
 set(LOG_LIB glog::glog gflags)
