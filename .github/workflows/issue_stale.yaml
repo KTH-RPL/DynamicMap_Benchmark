@@ -1,7 +1,7 @@
 name: Close inactive issues
 on:
   schedule:
-    - cron: "35 11 * * *"
+    - cron: "35 11 * * 1"
 
 env:
   DAYS_BEFORE_ISSUE_STALE: 14
