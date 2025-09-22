@@ -14,9 +14,9 @@ do
     data_path=${data_folder}/data/${seq_num}
 
     echo "Processing sequence ${seq_num} ... in octomap [origin, w G, w GF]"
-    ${benchmarks_path}/octomap/build/octomap_run ${data_path} ${benchmarks_path}/octomap/assets/config_g.yaml -1
-    ${benchmarks_path}/octomap/build/octomap_run ${data_path} ${benchmarks_path}/octomap/assets/config_fg.yaml -1
-    ${benchmarks_path}/octomap/build/octomap_run ${data_path} ${benchmarks_path}/octomap/assets/config.yaml -1
+    ${benchmarks_path}/octomap/build/octomap_run ${data_path} ${benchmarks_path}/octomap/assets/config_g.toml -1
+    ${benchmarks_path}/octomap/build/octomap_run ${data_path} ${benchmarks_path}/octomap/assets/config_fg.toml -1
+    ${benchmarks_path}/octomap/build/octomap_run ${data_path} ${benchmarks_path}/octomap/assets/config.toml -1
 
     echo "Processing sequence ${seq_num} ... in remover and erasor"
     if [ "${seq_num}" \> "av2" ]; then
